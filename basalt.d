@@ -24,7 +24,7 @@ import core.stdc.stdlib : exit;
 import std.conv : to;
 import std.file : readText, write;
 import std.stdio : writeln;
-import std.string : endsWith, indexOf, join, replace, split, startsWith, toLower;
+import std.string : endsWith, join, replace, startsWith, toLower;
 
 // -- TYPES
 
@@ -393,8 +393,7 @@ class SCHEMA
         {
             table = GetTable( value_array[ 2 ].Text );
 
-            writeln( table.Name );
-            writeln();
+            writeln( "\n" ~ table.Name ~ "\n" );
 
             for ( value_index = 4;
                   value_index < value_array.length;
