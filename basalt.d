@@ -124,9 +124,9 @@ struct VALUE
                 .replace( "\\", "\\\\" )
                 .replace( "~", "\\~" )
                 .replace( "^", "\\^" )
-                .replace( "\n", "\\n" )
-                .replace( "\r", "\\r" )
-                .replace( "\t", "\\t" );
+                .replace( "\n", "\\\\n" )
+                .replace( "\r", "\\\\r" )
+                .replace( "\t", "\\\\t" );
     }
 }
 
