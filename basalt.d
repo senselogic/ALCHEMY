@@ -782,8 +782,8 @@ void main(
         }
 
         if ( option == "--read-sql"
-                  && argument_count == 1
-                  && argument_array[ 0 ].endsWith( ".sql" ) )
+             && argument_count == 1
+             && argument_array[ 0 ].endsWith( ".sql" ) )
         {
             Schema.ReadSqlFile( argument_array[ 0 ] );
         }

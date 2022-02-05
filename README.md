@@ -23,8 +23,8 @@ basalt [options]
 ### Options
 
 ```
---read-sql : read an SQL data file
---write-bd : write a Basil data file
+--read-sql <file path> : read an SQL data file
+--write-bd <file path> : write a Basil data file
 ```
 
 ### Examples
