@@ -804,7 +804,7 @@ void main(
     if ( argument_array.length > 0 )
     {
         writeln( "Usage :" );
-        writeln( "    basalt [ options ]" );
+        writeln( "    basalt [options]" );
         writeln( "Options :" );
         writeln( "    --read-sql <file path>" );
         writeln( "    --write-bd <file path>" );
