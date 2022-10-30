@@ -24,7 +24,7 @@ import core.stdc.stdlib : exit;
 import std.conv : to;
 import std.file : readText, write;
 import std.stdio : writeln;
-import std.string : endsWith, join, replace, startsWith, toLower;
+import std.string : endsWith, join, replace, split, startsWith, toLower;
 
 // -- TYPES
 
@@ -141,6 +141,8 @@ class COLUMN
         Definition;
     VALUE[]
         ValueArray;
+    long
+        CellIndex;
 
     // -- OPERATIONS
 
@@ -365,12 +367,223 @@ class SCHEMA
 
     // ~~
 
+    void ParseCsvCells(
+        string[][] cell_array_array
+        )
+    {
+        long
+            cell_column_index,
+            column_cell_index,
+            remaining_column_cell_index,
+            table_column_cell_index;
+        long[]
+            remaining_column_cell_index_array,
+            table_column_cell_index_array;
+        string
+            cell_column_name;
+        string[]
+            part_array,
+            remaining_column_name_array,
+            table_column_name_array;
+        TABLE
+            table;
+        VALUE
+            table_column_value;
+
+        table = GetTable( "TABLE" );
+
+        foreach ( row_index, cell_array; cell_array_array )
+        {
+            if ( row_index == 0 )
+            {
+                table_column_name_array.length = cell_array.length;
+                table_column_cell_index_array.length = cell_array.length;
+
+                foreach ( cell_index, cell; cell_array )
+                {
+                    part_array = cell.split( '#' );
+
+                    if ( part_array.length == 2 )
+                    {
+                        cell_column_name = part_array[ 0 ];
+                        cell_column_index = part_array[ 1 ].to!int() - 1;
+
+                        if ( cell_column_index >= 0
+                             && cell_column_index < table_column_name_array.length )
+                        {
+                            table_column_name_array[ cell_column_index ] = cell_column_name;
+                            table_column_cell_index_array[ cell_column_index ] = cell_index;
+                        }
+                        else
+                        {
+                            Abort( "Invalid column number : " ~ cell );
+                        }
+                    }
+                    else if ( cell != "" )
+                    {
+                        remaining_column_name_array ~= cell;
+                        remaining_column_cell_index_array ~= cell_index;
+                    }
+                }
+
+                foreach ( remaining_column_index, remaining_column_name; remaining_column_name_array )
+                {
+                    remaining_column_cell_index = remaining_column_cell_index_array[ remaining_column_index ];
+
+                    foreach ( table_column_index, table_column_name; table_column_name_array )
+                    {
+                        if ( table_column_name == "" )
+                        {
+                            table_column_name_array[ table_column_index ] = remaining_column_name;
+                            table_column_cell_index_array[ table_column_index ] = remaining_column_cell_index;
+
+                            break;
+                        }
+                    }
+                }
+
+                foreach ( table_column_index, table_column_name; table_column_name_array )
+                {
+                    if ( table_column_name != "" )
+                    {
+                        table.GetColumn( table_column_name ).CellIndex = table_column_cell_index_array[ table_column_index ];
+                    }
+                }
+            }
+            else
+            {
+                table_column_value.Type = VALUE_TYPE.String;
+
+                foreach ( table_column; table.ColumnArray )
+                {
+                    table_column_cell_index = table_column.CellIndex;
+
+                    if ( table_column_cell_index >= 0
+                         && table_column_cell_index < cell_array.length )
+                    {
+                        table_column_value.Text = cell_array[ table_column_cell_index ];
+                    }
+                    else
+                    {
+                        table_column_value.Text = "";
+                    }
+
+                    table_column.ValueArray ~= table_column_value;
+                }
+
+                ++table.RowCount;
+            }
+        }
+    }
+
+    // ~~
+
+    void ParseCsvText(
+        string text
+        )
+    {
+        bool
+            character_starts_cell,
+            character_is_quoted,
+            character_starts_row;
+        char
+            character;
+        long
+            character_index;
+        string[][]
+            cell_array_array;
+
+        text = text.replace( "\r", "" );
+
+        character_starts_row = true;
+        character_starts_cell = true;
+        character_is_quoted = false;
+
+        for ( character_index = 0;
+              character_index < text.length;
+              ++character_index )
+        {
+            character = text[ character_index ];
+
+            if ( character_is_quoted )
+            {
+                if ( character == StringDelimiterCharacter )
+                {
+                    if ( character_index + 1 < text.length
+                         && text[ character_index + 1 ] == StringDelimiterCharacter )
+                    {
+                        ++character_index;
+
+                        cell_array_array[ $ - 1 ][ $ - 1 ] ~= character;
+                    }
+                    else
+                    {
+                        character_is_quoted = false;
+                        character_starts_cell = true;
+                    }
+                }
+                else
+                {
+                    cell_array_array[ $ - 1 ][ $ - 1 ] ~= character;
+                }
+            }
+            else if ( character == CellDelimiterCharacter )
+            {
+                character_starts_cell = true;
+            }
+            else if ( character == RowDelimiterCharacter )
+            {
+                character_starts_cell = true;
+                character_starts_row = true;
+            }
+            else
+            {
+                if ( character_starts_row )
+                {
+                    cell_array_array ~= null;
+                }
+
+                if ( character_starts_cell )
+                {
+                    cell_array_array[ $ - 1 ] ~= "";
+                }
+
+                if ( character_starts_cell
+                     && character == StringDelimiterCharacter )
+                {
+                    character_is_quoted = true;
+                }
+                else
+                {
+                    cell_array_array[ $ - 1 ][ $ - 1 ] ~= character;
+                }
+
+                character_starts_cell = false;
+                character_starts_row = false;
+            }
+        }
+
+        ParseCsvCells( cell_array_array );
+    }
+
+    // ~~
+
+    void ReadCsvFile(
+        string file_path
+        )
+    {
+        ParseCsvText( file_path.ReadText() );
+    }
+
+    // ~~
+
     /*
     INSERT INTO `blocks` (`id`, `idPage`, `idBlock`, `pageType`, `type`, `prior`) VALUES
     (3, 1, 3, 'page', 'text_and_image', 300000),
+    ...
     */
 
-    void ParseStatement(
+    void ParseSqlStatement(
         VALUE[] value_array
         )
     {
@@ -452,7 +665,7 @@ class SCHEMA
 
     // ~~
 
-    void ParseStatements(
+    void ParseSqlText(
         string text
         )
     {
@@ -648,7 +861,7 @@ class SCHEMA
                 {
                     if ( value_array.length > 0 )
                     {
-                        ParseStatement( value_array );
+                        ParseSqlStatement( value_array );
                         value_array = null;
                     }
                 }
@@ -668,12 +881,16 @@ class SCHEMA
         string file_path
         )
     {
-        ParseStatements( file_path.ReadText() );
+        ParseSqlText( file_path.ReadText() );
     }
 }
 
 // -- VARIABLES
 
+char
+    StringDelimiterCharacter = '"',
+    RowDelimiterCharacter = '\n',
+    CellDelimiterCharacter = ',';
 SCHEMA
     Schema;
 
@@ -781,9 +998,15 @@ void main(
             ++argument_count;
         }
 
-        if ( option == "--read-sql"
+        if ( option == "--read-csv"
              && argument_count == 1
-             && argument_array[ 0 ].endsWith( ".sql" ) )
+             && argument_array[ 0 ].endsWith( ".csv" ) )
+        {
+            Schema.ReadCsvFile( argument_array[ 0 ] );
+        }
+        else if ( option == "--read-sql"
+                  && argument_count == 1
+                  && argument_array[ 0 ].endsWith( ".sql" ) )
         {
             Schema.ReadSqlFile( argument_array[ 0 ] );
         }

@@ -23,11 +23,18 @@ basalt [options]
 ### Options
 
 ```
+--read-csv <file path> : read a CSV data file
 --read-sql <file path> : read an SQL data file
 --write-bd <file path> : write a Basil data file
 ```
 
 ### Examples
+
+```bash
+basalt --read-csv character.csv --write-bd character.bd
+```
+
+Reads a CSV data file and writes a Basil data file.
 
 ```bash
 basalt --read-sql blog.sql --write-bd blog.bd
