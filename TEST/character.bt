@@ -1,4 +1,4 @@
-( ( table.Name == "CHARACTER" ) ? ( ( table.Name ~ ` ` ~ table.RowIndex ~ `/` ~ table.RowCount ~ ` :  ` ~ row.FirstName ~ ` ` ~ row.LastName ~ ` (` ~ ( Replace ( row.Race ).ToUpperCase "HOBBIT" "Hobbit" ) ~ `)
+( ( ( table.Name == "CHARACTER" ) ? ( ( table.Name ~ ` ` ~ table.RowIndex ~ `/` ~ table.RowCount ~ ` :  ` ~ row.FirstName ~ ` ` ~ row.LastName ~ ` (` ~ ( Replace ( row.Race ).ToUpperCase "HOBBIT" "Hobbit" ) ~ `)
 
 ` ~ row.Description ~ `
 
@@ -6,4 +6,35 @@
 
 ---
 
-` ) ) )
+` ) ) ) ~ `
+` ~ ( !true ) ~ `
+` ~ ( true & true & false ) ~ `
+` ~ ( false | false | true ) ~ `
+
+` ~ ( 1 < 2 ) ~ `
+` ~ ( 1 <= 2 ) ~ `
+` ~ ( 1 != 2 ) ~ `
+` ~ ( 1 == 2 ) ~ `
+` ~ ( 1 >= 2 ) ~ `
+` ~ ( 1 > 2 ) ~ `
+
+` ~ ( "a" < "b" ) ~ `
+` ~ ( "a" <= "b" ) ~ `
+` ~ ( "a" != "b" ) ~ `
+` ~ ( "a" == "b" ) ~ `
+` ~ ( "a" >= "b" ) ~ `
+` ~ ( "a" > "b" ) ~ `
+
+` ~ ( ( 1 < 2 ) ? "then" ) ~ `
+` ~ ( ( 1 < 2 ) ? "then" : "else" ) ~ `
+
+` ~ ( 1 + 2 + 3 ) ~ `
+` ~ ( 1 - 2 - 3 ) ~ `
+` ~ ( 1 * 2 * 3 ) ~ `
+` ~ ( 1 / 2 / 3 ) ~ `
+
+` ~ ( `string` ~ "string" ~ 'string' ) ~ `
+
+---
+
+` )

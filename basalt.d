@@ -1302,7 +1302,8 @@ class SCHEMA
                     }
                 }
 
-                if ( value.IsBooleanIdentifier() )
+                if ( value_text == "false"
+                     || value_text == "true" )
                 {
                     value.SetBoolean( value_text );
                 }
