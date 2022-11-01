@@ -61,7 +61,7 @@ row.<column name>
 ( 1 - 2 - 3 )
 ( 1 * 2 * 3 )
 ( 1 / 2 / 3 )
-( "text" ~ "text" ~ "text" ~ ... )
+( `string` ~ "string" ~ 'string' )
 ```
 
 ## Installation
