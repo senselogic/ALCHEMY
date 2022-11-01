@@ -1,4 +1,4 @@
-( table.Name ~ ` ` ~ table.RowIndex ~ `/` ~ table.RowCount ~ ` :  ` ~ row.FirstName ~ ` ` ~ row.LastName ~ ` (` ~ row.Race ~ `)
+( ( table.Name == "CHARACTER" ) ? ( ( table.Name ~ ` ` ~ table.RowIndex ~ `/` ~ table.RowCount ~ ` :  ` ~ row.FirstName ~ ` ` ~ row.LastName ~ ` (` ~ ( Replace ( row.Race ).ToUpperCase "HOBBIT" "Hobbit" ) ~ `)
 
 ` ~ row.Description ~ `
 
@@ -6,4 +6,4 @@
 
 ---
 
-` )
+` ) ) )

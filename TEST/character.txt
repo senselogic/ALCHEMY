@@ -40,7 +40,7 @@ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisi
 
 ---
 
-CHARACTER 3/13 :  Beren Erchamion (Man)
+CHARACTER 3/13 :  Beren Erchamion (MAN)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -68,7 +68,7 @@ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisi
 
 ---
 
-CHARACTER 5/13 :  Gildor Inglorion (Elf)
+CHARACTER 5/13 :  Gildor Inglorion (ELF)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -82,7 +82,7 @@ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisi
 
 ---
 
-CHARACTER 6/13 :  Grìma Wormtongue (Man)
+CHARACTER 6/13 :  Grìma Wormtongue (MAN)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -96,7 +96,7 @@ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisi
 
 ---
 
-CHARACTER 7/13 :  Helm Hammerhand (Man)
+CHARACTER 7/13 :  Helm Hammerhand (MAN)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -138,7 +138,7 @@ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisi
 
 ---
 
-CHARACTER 10/13 :  Rowlie Appledore (Man)
+CHARACTER 10/13 :  Rowlie Appledore (MAN)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 

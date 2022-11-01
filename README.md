@@ -64,6 +64,14 @@ row.<column name>
 ( `string` ~ "string" ~ 'string' )
 ```
 
+#### Functions
+
+```javascript
+( HasPrefix "abcdef" "abc" )
+( HasSuffix "abcdef" "def" )
+( Replace "abcdabcd" "abcd" "xyz" )
+```
+
 ## Installation
 
 Install the [DMD 2 compiler](https://dlang.org/download.html) (using the MinGW setup option on Windows).

@@ -25,7 +25,7 @@ import std.algorithm : countUntil;
 import std.conv : to;
 import std.file : readText, write;
 import std.stdio : writeln;
-import std.string : endsWith, indexOf, join, replace, split, startsWith, toLower;
+import std.string : endsWith, indexOf, join, replace, split, startsWith, toLower, toUpper;
 
 // -- TYPES
 
@@ -1491,7 +1491,7 @@ class SCHEMA
                 else if ( argument_value.IsString()
                           && property_value.IsIdentifier( "ToUpperCase" ) )
                 {
-                    result_value.SetString( argument_value.Text.toLower() );
+                    result_value.SetString( argument_value.Text.toUpper() );
                 }
                 else if ( property_value.IsIdentifier( "ToBoolean" ) )
                 {
@@ -1568,7 +1568,7 @@ class SCHEMA
                     {
                         if ( value_array[ 0 ].IsTrue() )
                         {
-                            result_value = value_array[ 3 ];
+                            result_value = value_array[ 2 ];
                         }
                         else
                         {
@@ -1700,6 +1700,45 @@ class SCHEMA
                                     );
                             }
                         }
+                    }
+                    else if ( value_array.length == 3
+                              && value_array[ 0 ].IsIdentifier( "HasPrefix" )
+                              && value_array[ 1 ].IsString()
+                              && value_array[ 2 ].IsString() )
+                    {
+                        result_value.SetBoolean(
+                            value_array[ 1 ].Text.startsWith( value_array[ 2 ].Text )
+                            );
+                    }
+                    else if ( value_array.length == 3
+                              && value_array[ 0 ].IsIdentifier( "HasSuffix" )
+                              && value_array[ 1 ].IsString()
+                              && value_array[ 2 ].IsString() )
+                    {
+                        result_value.SetBoolean(
+                            value_array[ 1 ].Text.endsWith( value_array[ 2 ].Text )
+                            );
+                    }
+                    else if ( value_array.length == 4
+                              && value_array[ 0 ].IsIdentifier( "Replace" )
+                              && value_array[ 1 ].IsString()
+                              && value_array[ 2 ].IsString()
+                              && value_array[ 3 ].IsString() )
+                    {
+                        result_value.SetString(
+                            value_array[ 1 ].Text.replace( value_array[ 2 ].Text, value_array[ 3 ].Text )
+                            );
+                    }
+                    else
+                    {
+                        Abort(
+                            "Invalid expression : ",
+                            result_value_array,
+                            first_value_index,
+                            last_value_index + 1,
+                            first_value_index + 1,
+                            first_value_index + last_value_index
+                            );
                     }
 
                     result_value_array
