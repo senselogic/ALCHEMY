@@ -6,7 +6,7 @@ Database converter.
 
 ### Template syntax
 
-The table data can be converted to text files using Lisp-like templates.
+The table data can be converted to text files using Lisp-like templates which will be applied to each row of each table.
 
 #### Constants
 
