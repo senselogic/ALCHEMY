@@ -1,69 +1,82 @@
-TABLE
+CHARACTER
 
-    FirstName LastName Description Race
+    FirstName LastName Description Race Comment
 
         Amaranth
             ~ Brandybuck
             ~ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\n\\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\\n\\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\\n\\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est "laborum".
             ~ Hobbit
+            ~ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières. ¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières. ¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières. ¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера. ¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
         Amethyst
             ~ Hornblower
             ~ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\n\\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\\n\\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\\n\\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est "laborum".
             ~ Hobbit
+            ~ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières. ¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières. ¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières. ¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера. ¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
         Belladonna
             ~ Goodchild
             ~ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\n\\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\\n\\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\\n\\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est "laborum".
             ~ Hobbit
+            ~ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières. ¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières. ¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières. ¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера. ¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
         Beren
             ~ Erchamion
             ~ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\n\\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\\n\\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\\n\\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est "laborum".
             ~ Man
+            ~ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières. ¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières. ¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières. ¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера. ¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
         Frodo
             ~ Baggins
             ~ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\n\\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\\n\\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\\n\\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est "laborum".
             ~ Hobbit
+            ~ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières. ¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières. ¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières. ¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера. ¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
         Gildor
             ~ Inglorion
             ~ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\n\\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\\n\\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\\n\\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est "laborum".
             ~ Elf
+            ~ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières. ¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières. ¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières. ¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера. ¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
         Grìma
             ~ Wormtongue
             ~ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\n\\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\\n\\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\\n\\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est "laborum".
             ~ Man
+            ~ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières. ¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières. ¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières. ¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера. ¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
         Helm
             ~ Hammerhand
             ~ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\n\\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\\n\\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\\n\\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est "laborum".
             ~ Man
+            ~ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières. ¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières. ¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières. ¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера. ¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
         Lalia
             ~ Clayhanger
             ~ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\n\\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\\n\\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\\n\\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est "laborum".
             ~ Hobbit
+            ~ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières. ¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières. ¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières. ¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера. ¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
         Nina
             ~ Lightfoot
             ~ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\n\\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\\n\\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\\n\\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est "laborum".
             ~ Hobbit
+            ~ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières. ¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières. ¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières. ¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера. ¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
         Rowlie
             ~ Appledore
             ~ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\n\\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\\n\\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\\n\\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est "laborum".
             ~ Man
+            ~ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières. ¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières. ¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières. ¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера. ¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
         Sigismond
             ~ Took
             ~ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\n\\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\\n\\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\\n\\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est "laborum".
             ~ Hobbit
+            ~ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières. ¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières. ¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières. ¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера. ¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
         Wilibald
             ~ Bolger
             ~ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\n\\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\\n\\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\\n\\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est "laborum".
             ~ Hobbit
+            ~ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières. ¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières. ¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières. ¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера. ¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 

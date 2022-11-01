@@ -1,0 +1,9 @@
+( table.Name ~ ` ` ~ table.RowIndex ~ `/` ~ table.RowCount ~ ` :  ` ~ row.FirstName ~ ` ` ~ row.LastName ~ ` (` ~ row.Race ~ `)
+
+` ~ row.Description ~ `
+
+` ~ row.Comment ~ `
+
+---
+
+` )
