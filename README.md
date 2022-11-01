@@ -21,9 +21,6 @@ true
 `this is
 a string`
 
-'this is
-a string'
-
 "this is
 a string"
 
