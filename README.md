@@ -10,7 +10,7 @@ The table data can be converted to text files using Lisp-like templates.
 
 #### Constants
 
-```lisp
+```javascript
 false
 true
 
@@ -33,7 +33,7 @@ a string'
 
 #### Variables
 
-```lisp
+```javascript
 table.Name
 table.RowIndex
 table.RowCount
@@ -42,7 +42,7 @@ row.<column name>
 
 #### Operators
 
-```lisp
+```javascript
 ( !true )
 ( true & true & false )
 ( false | false | true )
