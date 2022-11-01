@@ -4,32 +4,7 @@
 
 Database converter.
 
-## Installation
-
-Install the [DMD 2 compiler](https://dlang.org/download.html) (using the MinGW setup option on Windows).
-
-Build the executable with the following command line :
-
-```bash
-dmd -m64 basalt.d
-```
-
-## Command line
-
-```
-basalt [options]
-```
-
-### Options
-
-```
---read-csv <data file path> <table name> : read a CSV data file
---read-sql <data file path> : read an SQL data file
---write-bd <data file path> : write a Basil data file
---process <template file path> <output file path> : apply a template file
-```
-
-### Processing
+### Template syntax
 
 The table data can be converted to text files using Lisp-like templates.
 
@@ -90,6 +65,31 @@ row.<column name>
 ( 1 * 2 * 3 )
 ( 1 / 2 / 3 )
 ( "text" ~ "text" ~ "text" ~ ... )
+```
+
+## Installation
+
+Install the [DMD 2 compiler](https://dlang.org/download.html) (using the MinGW setup option on Windows).
+
+Build the executable with the following command line :
+
+```bash
+dmd -m64 basalt.d
+```
+
+## Command line
+
+```
+basalt [options]
+```
+
+### Options
+
+```
+--read-csv <data file path> <table name> : read a CSV data file
+--read-sql <data file path> : read an SQL data file
+--write-bd <data file path> : write a Basil data file
+--process <template file path> <output file path> : apply a template file
 ```
 
 ### Examples
