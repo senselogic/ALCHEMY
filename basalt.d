@@ -1604,35 +1604,17 @@ class SCHEMA
                             operator_value = value_array[ operator_value_index ];
                             argument_value = value_array[ operator_value_index + 1 ];
 
-                            if ( operator_value.IsOperator( "~" )
+                            if ( operator_value.IsOperator( "&" )
                                  && result_value.IsArgument()
                                  && argument_value.IsArgument() )
                             {
-                                result_value.SetString( result_value.Text ~ argument_value.Text );
+                                result_value.SetBoolean( result_value.IsTrue() && argument_value.IsTrue() );
                             }
-                            else if ( operator_value.IsOperator( "+" )
-                                      && result_value.IsNumber()
-                                      && argument_value.IsNumber() )
+                            else if ( operator_value.IsOperator( "|" )
+                                      && result_value.IsArgument()
+                                      && argument_value.IsArgument() )
                             {
-                                result_value.SetNumber( result_value.Number + argument_value.Number );
-                            }
-                            else if ( operator_value.IsOperator( "-" )
-                                      && result_value.IsNumber()
-                                      && argument_value.IsNumber() )
-                            {
-                                result_value.SetNumber( result_value.Number - argument_value.Number );
-                            }
-                            else if ( operator_value.IsOperator( "*" )
-                                      && result_value.IsNumber()
-                                      && argument_value.IsNumber() )
-                            {
-                                result_value.SetNumber( result_value.Number * argument_value.Number );
-                            }
-                            else if ( operator_value.IsOperator( "/" )
-                                      && result_value.IsNumber()
-                                      && argument_value.IsNumber() )
-                            {
-                                result_value.SetNumber( result_value.Number / argument_value.Number );
+                                result_value.SetBoolean( result_value.IsTrue() || argument_value.IsTrue() );
                             }
                             else if ( operator_value.IsOperator( "<" )
                                       && result_value.IsArgument()
@@ -1676,17 +1658,35 @@ class SCHEMA
                             {
                                 result_value.SetBoolean( result_value.GetComparison( argument_value ) > 0 );
                             }
-                            else if ( operator_value.IsOperator( "&" )
-                                      && result_value.IsArgument()
-                                      && argument_value.IsArgument() )
+                            else if ( operator_value.IsOperator( "+" )
+                                      && result_value.IsNumber()
+                                      && argument_value.IsNumber() )
                             {
-                                result_value.SetBoolean( result_value.IsTrue() && argument_value.IsTrue() );
+                                result_value.SetNumber( result_value.Number + argument_value.Number );
                             }
-                            else if ( operator_value.IsOperator( "|" )
+                            else if ( operator_value.IsOperator( "-" )
+                                      && result_value.IsNumber()
+                                      && argument_value.IsNumber() )
+                            {
+                                result_value.SetNumber( result_value.Number - argument_value.Number );
+                            }
+                            else if ( operator_value.IsOperator( "*" )
+                                      && result_value.IsNumber()
+                                      && argument_value.IsNumber() )
+                            {
+                                result_value.SetNumber( result_value.Number * argument_value.Number );
+                            }
+                            else if ( operator_value.IsOperator( "/" )
+                                      && result_value.IsNumber()
+                                      && argument_value.IsNumber() )
+                            {
+                                result_value.SetNumber( result_value.Number / argument_value.Number );
+                            }
+                            else if ( operator_value.IsOperator( "~" )
                                       && result_value.IsArgument()
                                       && argument_value.IsArgument() )
                             {
-                                result_value.SetBoolean( result_value.IsTrue() || argument_value.IsTrue() );
+                                result_value.SetString( result_value.Text ~ argument_value.Text );
                             }
                             else
                             {
