@@ -16,7 +16,7 @@ Database converter.
 
 ## Template syntax
 
-The imported data can be exported to custom text files using a Lisp-like syntax.
+The table rows can be exported to custom text files using a Lisp-like syntax.
 
 ```javascript
 (
