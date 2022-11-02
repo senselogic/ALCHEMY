@@ -1153,7 +1153,7 @@ class SCHEMA
                     }
                     else
                     {
-                        value.Text ~= character;
+                        value_text ~= character;
 
                         ++character_index;
                     }
