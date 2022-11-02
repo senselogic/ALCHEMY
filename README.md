@@ -4,15 +4,17 @@
 
 Database converter.
 
-## Import format
+## Import formats
 
 *   CSV
 *   SQL
 
-## Export format
+## Export formats
 
 *   Basil
 *   Custom
+
+## Template syntax
 
 The imported data can be exported to custom text files using a Lisp-like syntax.
 
@@ -52,8 +54,6 @@ The imported data can be exported to custom text files using a Lisp-like syntax.
     ~ ( `string` ~ "string" ~ 'string' ) ~ "\n\n---\n\n"
 )
 ```
-
-## Template syntax
 
 ### Constants
 
