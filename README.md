@@ -51,7 +51,7 @@ The table rows can be exported to custom text files using a Lisp-like syntax.
     ~ ( 1 - 2 - 3 ) ~ "\n"
     ~ ( 1 * 2 * 3 ) ~ "\n"
     ~ ( 1 / 2 / 3 ) ~ "\n\n"
-    ~ ( `string` ~ "string" ~ 'string' ) ~ "\n\n---\n\n"
+    ~ ( "string" ~ 'string' ~ `string` ) ~ "\n\n---\n\n"
 )
 ```
 
@@ -65,14 +65,14 @@ true
 
 123.456
 
-`this is
-a string`
-
 "this is
 a string"
 
 'this is
 a string'
+
+`this is
+a string`
 ```
 
 ### Variables
@@ -108,7 +108,7 @@ row.<column name>
 ( 1 - 2 - 3 )
 ( 1 * 2 * 3 )
 ( 1 / 2 / 3 )
-( `string` ~ "string" ~ 'string' )
+( "string" ~ 'string' ~ `string` )
 ```
 
 ### Filters

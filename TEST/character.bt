@@ -30,5 +30,5 @@
     ~ ( 1 - 2 - 3 ) ~ "\n"
     ~ ( 1 * 2 * 3 ) ~ "\n"
     ~ ( 1 / 2 / 3 ) ~ "\n\n"
-    ~ ( `string` ~ "string" ~ 'string' ) ~ "\n\n---\n\n"
+    ~ ( "string" ~ 'string' ~ `string` ) ~ "\n\n---\n\n"
 )
