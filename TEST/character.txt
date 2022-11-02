@@ -12,7 +12,6 @@ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisi
 
 ---
 
-
 false
 false
 true
@@ -56,7 +55,6 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières.¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières.¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières.¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера.¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
 ---
-
 
 false
 false
@@ -102,7 +100,6 @@ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisi
 
 ---
 
-
 false
 false
 true
@@ -146,7 +143,6 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières.¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières.¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières.¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера.¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
 ---
-
 
 false
 false
@@ -192,7 +188,6 @@ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisi
 
 ---
 
-
 false
 false
 true
@@ -236,7 +231,6 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières.¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières.¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières.¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера.¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
 ---
-
 
 false
 false
@@ -282,7 +276,6 @@ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisi
 
 ---
 
-
 false
 false
 true
@@ -326,7 +319,6 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières.¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières.¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières.¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера.¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
 ---
-
 
 false
 false
@@ -372,7 +364,6 @@ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisi
 
 ---
 
-
 false
 false
 true
@@ -416,7 +407,6 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières.¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières.¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières.¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера.¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
 ---
-
 
 false
 false
@@ -462,7 +452,6 @@ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisi
 
 ---
 
-
 false
 false
 true
@@ -507,7 +496,6 @@ Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisi
 
 ---
 
-
 false
 false
 true
@@ -551,7 +539,6 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières.¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières.¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières.¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера.¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
 ---
-
 
 false
 false
