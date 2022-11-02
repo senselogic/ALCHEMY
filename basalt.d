@@ -22,10 +22,12 @@
 
 import core.stdc.stdlib : exit;
 import std.algorithm : countUntil;
+import std.ascii : isDigit, isLower, isUpper;
 import std.conv : to;
 import std.file : readText, write;
 import std.stdio : writeln;
-import std.string : endsWith, indexOf, join, replace, split, startsWith, toLower, toUpper;
+import std.string : capitalize, endsWith, indexOf, join, replace, split, startsWith, toLower, toUpper;
+import std.uni : isAlpha;
 
 // -- TYPES
 
@@ -52,7 +54,7 @@ struct VALUE
     string
         Text;
     double
-        Number;
+        Number = 0.0;
 
     // -- INQUIRIES
 
@@ -257,14 +259,7 @@ struct VALUE
     string GetBasilText(
         )
     {
-        return
-            Text
-                .replace( "\\", "\\\\" )
-                .replace( "~", "\\~" )
-                .replace( "^", "\\^" )
-                .replace( "\n", "\\\\n" )
-                .replace( "\r", "\\\\r" )
-                .replace( "\t", "\\\\t" );
+        return Text.GetBasilText();
     }
 
     // ~~
@@ -307,7 +302,7 @@ struct VALUE
     {
         Type = VALUE_TYPE.Number;
         Text = text;
-        Number = 0.0;
+        Number = text.to!double();
     }
 
     // ~~
@@ -625,17 +620,81 @@ class SCHEMA
 
     // ~~
 
+    void StripCsvCells(
+        string[][] cell_array_array
+        )
+    {
+        long
+            cell_index;
+        string
+            cell;
+
+        if ( cell_array_array.length > 0 )
+        {
+            for ( cell_index = 0;
+                  cell_index < cell_array_array[ 0 ].length;
+                  ++cell_index )
+            {
+                cell = cell_array_array[ 0 ][ cell_index ];
+
+                if ( cell.startsWith( '!' ) )
+                {
+                    cell_array_array[ 0 ][ cell_index ] = cell[ 1 .. $ ];
+
+                    foreach ( row_index, cell_array; cell_array_array )
+                    {
+                        if ( row_index > 0 )
+                        {
+                            cell = GetCell( cell_array_array, row_index, cell_index );
+                            SetCell( cell_array_array, row_index, cell_index, cell.GetStrippedText() );
+                        }
+                    }
+                }
+                else if ( cell.startsWith( '<' ) )
+                {
+                    cell_array_array[ 0 ][ cell_index ] = cell[ 1 .. $ ];
+
+                    foreach ( row_index, cell_array; cell_array_array )
+                    {
+                        if ( row_index > 0 )
+                        {
+                            cell = GetCell( cell_array_array, row_index, cell_index );
+                            SetCell( cell_array_array, row_index, cell_index, cell.GetLeftStrippedText() );
+                        }
+                    }
+                }
+                else if ( cell.startsWith( '>' ) )
+                {
+                    cell_array_array[ 0 ][ cell_index ] = cell[ 1 .. $ ];
+
+                    foreach ( row_index, cell_array; cell_array_array )
+                    {
+                        if ( row_index > 0 )
+                        {
+                            cell = GetCell( cell_array_array, row_index, cell_index );
+                            SetCell( cell_array_array, row_index, cell_index, cell.GetRightStrippedText() );
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // ~~
+
     void MergeCsvCells(
         string[][] cell_array_array
         )
     {
         long
+            cell_character_index,
             next_cell_index,
             prior_cell_index;
         string
+            cell,
+            column_name,
+            column_suffix,
             prior_cell;
-        string[]
-            part_array;
 
         if ( cell_array_array.length > 0 )
         {
@@ -643,15 +702,19 @@ class SCHEMA
                   next_cell_index < cell_array_array[ 0 ].length;
                   ++next_cell_index )
             {
-                part_array = cell_array_array[ 0 ][ next_cell_index ].split( '+' );
+                cell = cell_array_array[ 0 ][ next_cell_index ];
+                cell_character_index = cell.indexOf( '~' );
 
-                if ( part_array.length == 2 )
+                if ( cell_character_index > 0 )
                 {
-                    prior_cell_index = cell_array_array[ 0 ].countUntil( part_array[ 0 ] );
+                    column_name = cell[ 0 .. cell_character_index ];
+                    column_suffix = cell[ cell_character_index + 1 .. $ ];
+
+                    prior_cell_index = cell_array_array[ 0 ].countUntil( column_name );
 
                     if ( prior_cell_index < 0 )
                     {
-                        Abort( "Invalid column name : " ~ part_array[ 0 ] );
+                        Abort( "Invalid column name : " ~ column_name );
                     }
 
                     foreach ( row_index, cell_array; cell_array_array )
@@ -660,7 +723,7 @@ class SCHEMA
                         {
                             prior_cell
                                 = GetCell( cell_array_array, row_index, prior_cell_index )
-                                  ~ part_array[ 1 ]
+                                  ~ column_suffix
                                   ~ GetCell( cell_array_array, row_index, next_cell_index );
 
                             SetCell(
@@ -875,6 +938,7 @@ class SCHEMA
             }
         }
 
+        StripCsvCells( cell_array_array );
         MergeCsvCells( cell_array_array );
         ParseCsvCells( cell_array_array, table_name );
     }
@@ -1484,27 +1548,77 @@ class SCHEMA
                 argument_value = value_array[ 0 ];
                 property_value = value_array[ 2 ];
 
-                if ( argument_value.IsString()
-                     && property_value.IsIdentifier( "ToLowerCase" ) )
-                {
-                    result_value.SetString( argument_value.Text.toLower() );
-                }
-                else if ( argument_value.IsString()
-                          && property_value.IsIdentifier( "ToUpperCase" ) )
-                {
-                    result_value.SetString( argument_value.Text.toUpper() );
-                }
-                else if ( property_value.IsIdentifier( "ToBoolean" ) )
+                if ( property_value.IsIdentifier( "Boolean" ) )
                 {
                     result_value.SetBoolean( argument_value.IsTrue() );
                 }
-                else if ( property_value.IsIdentifier( "ToNumber" ) )
+                else if ( property_value.IsIdentifier( "Number" ) )
                 {
                     result_value.SetNumber( argument_value.Text );
                 }
-                else if ( property_value.IsIdentifier( "ToString" ) )
+                else if ( property_value.IsIdentifier( "String" ) )
                 {
                     result_value.SetString( argument_value.Text );
+                }
+                else if ( argument_value.IsString()
+                          && property_value.IsIdentifier( "Strip" ) )
+                {
+                    result_value.SetString( argument_value.Text.GetStrippedText() );
+                }
+                else if ( argument_value.IsString()
+                          && property_value.IsIdentifier( "StripLeft" ) )
+                {
+                    result_value.SetString( argument_value.Text.GetLeftStrippedText() );
+                }
+                else if ( argument_value.IsString()
+                          && property_value.IsIdentifier( "StripRight" ) )
+                {
+                    result_value.SetString( argument_value.Text.GetRightStrippedText() );
+                }
+                else if ( argument_value.IsString()
+                          && property_value.IsIdentifier( "MinorCase" ) )
+                {
+                    result_value.SetString( argument_value.Text.GetMinorCaseText() );
+                }
+                else if ( argument_value.IsString()
+                          && property_value.IsIdentifier( "MajorCase" ) )
+                {
+                    result_value.SetString( argument_value.Text.GetMajorCaseText() );
+                }
+                else if ( argument_value.IsString()
+                          && property_value.IsIdentifier( "LowerCase" ) )
+                {
+                    result_value.SetString( argument_value.Text.GetLowerCaseText() );
+                }
+                else if ( argument_value.IsString()
+                          && property_value.IsIdentifier( "UpperCase" ) )
+                {
+                    result_value.SetString( argument_value.Text.GetUpperCaseText() );
+                }
+                else if ( argument_value.IsString()
+                          && property_value.IsIdentifier( "CamelCase" ) )
+                {
+                    result_value.SetString( argument_value.Text.GetCamelCaseText() );
+                }
+                else if ( argument_value.IsString()
+                          && property_value.IsIdentifier( "PascalCase" ) )
+                {
+                    result_value.SetString( argument_value.Text.GetPascalCaseText() );
+                }
+                else if ( argument_value.IsString()
+                          && property_value.IsIdentifier( "SnakeCase" ) )
+                {
+                    result_value.SetString( argument_value.Text.GetSnakeCaseText() );
+                }
+                else if ( argument_value.IsString()
+                          && property_value.IsIdentifier( "SlugCase" ) )
+                {
+                    result_value.SetString( argument_value.Text.GetSlugCaseText() );
+                }
+                else if ( argument_value.IsString()
+                          && property_value.IsIdentifier( "Basil" ) )
+                {
+                    result_value.SetString( argument_value.Text.GetBasilText() );
                 }
                 else
                 {
@@ -1924,6 +2038,15 @@ bool IsDecimalCharacter(
 
 // ~~
 
+bool IsDecimalCharacter(
+    dchar character
+    )
+{
+    return ( character >= '0' && character <= '9' );
+}
+
+// ~~
+
 bool IsNumberCharacter(
     char character
     )
@@ -1934,6 +2057,331 @@ bool IsNumberCharacter(
         || character == '-'
         || character == 'e'
         || character == 'E';
+}
+
+// ~~
+
+bool IsSpaceCharacter(
+    dchar character
+    )
+{
+    return
+        character == dchar( ' ' )
+        || character == dchar( '\t' )
+        || character == dchar( 0xA0 );
+}
+
+// ~~
+
+string GetStrippedText(
+    string text
+    )
+{
+    dstring
+        unicode_text;
+
+    unicode_text = text.to!dstring();
+
+    while ( unicode_text.length > 0
+            && IsSpaceCharacter( unicode_text[ 0 ] ) )
+    {
+        unicode_text = unicode_text[ 1 .. $ ];
+    }
+
+    while ( unicode_text.length > 0
+            && IsSpaceCharacter( unicode_text[ $ - 1 ] ) )
+    {
+        unicode_text = unicode_text[ 0 .. $ - 1 ];
+    }
+
+    return unicode_text.to!string();
+}
+
+// ~~
+
+string GetLeftStrippedText(
+    string text
+    )
+{
+    dstring
+        unicode_text;
+
+    unicode_text = text.to!dstring();
+
+    while ( unicode_text.length > 0
+            && IsSpaceCharacter( unicode_text[ 0 ] ) )
+    {
+        unicode_text = unicode_text[ 1 .. $ ];
+    }
+
+    return unicode_text.to!string();
+}
+
+// ~~
+
+string GetRightStrippedText(
+    string text
+    )
+{
+    dstring
+        unicode_text;
+
+    unicode_text = text.to!dstring();
+
+    while ( unicode_text.length > 0
+            && IsSpaceCharacter( unicode_text[ $ - 1 ] ) )
+    {
+        unicode_text = unicode_text[ 0 .. $ - 1 ];
+    }
+
+    return unicode_text.to!string();
+}
+
+// ~~
+
+string GetMinorCaseText(
+    string text
+    )
+{
+    dstring
+        unicode_text;
+
+    if ( text == "" )
+    {
+        return "";
+    }
+    else
+    {
+        unicode_text = text.to!dstring();
+
+        return ( unicode_text[ 0 .. 1 ].toLower() ~ unicode_text[ 1 .. $ ] ).to!string();
+    }
+}
+
+// ~~
+
+string GetMajorCaseText(
+    string text
+    )
+{
+    dstring
+        unicode_text;
+
+    if ( text == "" )
+    {
+        return "";
+    }
+    else
+    {
+        unicode_text = text.to!dstring();
+
+        return ( unicode_text[ 0 .. 1 ].capitalize() ~ unicode_text[ 1 .. $ ] ).to!string();
+    }
+}
+
+// ~~
+
+string GetLowerCaseText(
+    string text
+    )
+{
+    return text.toLower();
+}
+
+// ~~
+
+string GetUpperCaseText(
+    string text
+    )
+{
+    return text.toUpper();
+}
+
+// ~~
+
+string GetPascalCaseText(
+    string text
+    )
+{
+    string[]
+        word_array;
+
+    word_array = text.replace( '_', '_' ).replace( '-', ' ' ).split( ' ' );
+
+    foreach ( ref word; word_array )
+    {
+        word = word.GetMajorCaseText();
+    }
+
+    return word_array.join( "" );
+}
+
+// ~~
+
+string GetCamelCaseText(
+    string text
+    )
+{
+    return text.GetPascalCaseText().GetMinorCaseText();
+}
+
+// ~~
+
+string GetSnakeCaseText(
+    string text
+    )
+{
+    dchar
+        character,
+        next_character,
+        prior_character;
+    long
+        character_index;
+    dstring
+        snake_case_text,
+        unicode_text;
+
+    unicode_text = text.replace( ' ', '_' ).replace( '-', '_' ).to!dstring();
+
+    snake_case_text = "";
+    prior_character = 0;
+
+    for ( character_index = 0;
+          character_index < unicode_text.length;
+          ++character_index )
+    {
+        character = unicode_text[ character_index ];
+
+        if ( character_index + 1 < unicode_text.length )
+        {
+            next_character = unicode_text[ character_index + 1 ];
+        }
+        else
+        {
+            next_character = 0;
+        }
+
+        if ( ( prior_character.isLower()
+               && ( character.isUpper()
+                    || character.isDigit() ) )
+             || ( prior_character.isDigit()
+                  && ( character.isLower()
+                       || character.isUpper() ) )
+             || ( prior_character.isUpper()
+                  && character.isUpper()
+                  && next_character.isLower() ) )
+        {
+            snake_case_text ~= '_';
+        }
+
+        snake_case_text ~= character;
+        prior_character = character;
+    }
+
+    return snake_case_text.to!string();
+}
+
+// ~~
+
+dchar GetSlugCharacter(
+    dchar character
+    )
+{
+    switch ( character )
+    {
+        case 'à' : return 'a';
+        case 'â' : return 'a';
+        case 'é' : return 'e';
+        case 'è' : return 'e';
+        case 'ê' : return 'e';
+        case 'ë' : return 'e';
+        case 'î' : return 'i';
+        case 'ï' : return 'i';
+        case 'ô' : return 'o';
+        case 'ö' : return 'o';
+        case 'û' : return 'u';
+        case 'ü' : return 'u';
+        case 'ç' : return 'c';
+        case 'ñ' : return 'n';
+        case 'À' : return 'a';
+        case 'Â' : return 'a';
+        case 'É' : return 'e';
+        case 'È' : return 'e';
+        case 'Ê' : return 'e';
+        case 'Ë' : return 'e';
+        case 'Î' : return 'i';
+        case 'Ï' : return 'i';
+        case 'Ô' : return 'o';
+        case 'Ö' : return 'o';
+        case 'Û' : return 'u';
+        case 'Ü' : return 'u';
+        case 'C' : return 'c';
+        case 'Ñ' : return 'n';
+        default : return character.toLower();
+    }
+}
+
+// ~~
+
+string GetSlugCaseText(
+    string text
+    )
+{
+    dstring
+        slug_case_text,
+        unicode_text;
+
+    unicode_text = text.replace( '_', ' ' ).replace( '-', ' ' ).to!dstring();
+
+    foreach ( character; unicode_text )
+    {
+        if ( character.isAlpha() )
+        {
+            slug_case_text ~= GetSlugCharacter( character );
+        }
+        else if ( character >= '0'
+                  && character <= '9' )
+        {
+            if ( slug_case_text != ""
+                 && !slug_case_text.endsWith( '-' )
+                 && !IsDecimalCharacter( slug_case_text[ $ - 1 ] ) )
+            {
+                slug_case_text ~= '-';
+            }
+
+            slug_case_text ~= character;
+        }
+        else
+        {
+            if ( !slug_case_text.endsWith( '-' ) )
+            {
+                slug_case_text ~= '-';
+            }
+        }
+    }
+
+    while ( slug_case_text.endsWith( '-' ) )
+    {
+        slug_case_text = slug_case_text[ 0 .. $ - 1 ];
+    }
+
+    return slug_case_text.to!string();
+}
+
+// ~~
+
+string GetBasilText(
+    string text
+    )
+{
+    return
+        text
+            .replace( "\\", "\\\\" )
+            .replace( "~", "\\~" )
+            .replace( "^", "\\^" )
+            .replace( "\n", "\\\\n" )
+            .replace( "\r", "\\\\r" )
+            .replace( "\t", "\\\\t" );
 }
 
 // ~~

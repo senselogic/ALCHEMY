@@ -64,6 +64,26 @@ row.<column name>
 ( `string` ~ "string" ~ 'string' )
 ```
 
+#### Filters
+
+```javascript
+value.Boolean
+value.Number
+value.String
+value.Strip
+value.StripLeft
+value.StripRight
+value.MinorCase
+value.MajorCase
+value.UpperCase
+value.LowerCase
+value.PascalCase
+value.CamelCase
+value.SnakeCase
+value.SlugCase
+value.Basil
+```
+
 #### Functions
 
 ```javascript
@@ -72,6 +92,44 @@ row.<column name>
 ( Replace "abcdabcd" "abcd" "xyz" )
 ```
 
+#### Sample
+
+```javascript
+(
+    (
+        ( table.Name == "CHARACTER" )
+        ? (
+            table.Name ~ " " ~ table.RowIndex ~ "/" ~ table.RowCount
+            ~ " :  " ~ row.FirstName ~ " " ~ row.LastName
+            ~ " (" ~ ( Replace ( row.Race ).UpperCase "HOBBIT" "Hobbit" ) ~ ")\n\n"
+            ~ row.Description ~ "\n\n"
+            ~ row.Comment ~ "\n\n---\n\n"
+        )
+    ) ~ "\n"
+    ~ ( !true ) ~ "\n"
+    ~ ( true & true & false ) ~ "\n"
+    ~ ( false | false | true ) ~ "\n\n"
+    ~ ( 1 < 2 ) ~ "\n"
+    ~ ( 1 <= 2 ) ~ "\n"
+    ~ ( 1 != 2 ) ~ "\n"
+    ~ ( 1 == 2 ) ~ "\n"
+    ~ ( 1 >= 2 ) ~ "\n"
+    ~ ( 1 > 2 ) ~ "\n\n"
+    ~ ( "a" < "b" ) ~ "\n"
+    ~ ( "a" <= "b" ) ~ "\n"
+    ~ ( "a" != "b" ) ~ "\n"
+    ~ ( "a" == "b" ) ~ "\n"
+    ~ ( "a" >= "b" ) ~ "\n"
+    ~ ( "a" > "b" ) ~ "\n\n"
+    ~ ( ( 1 < 2 ) ? "then" ) ~ "\n"
+    ~ ( ( 1 < 2 ) ? "then" : "else" ) ~ "\n\n"
+    ~ ( 1 + 2 + 3 ) ~ "\n"
+    ~ ( 1 - 2 - 3 ) ~ "\n"
+    ~ ( 1 * 2 * 3 ) ~ "\n"
+    ~ ( 1 / 2 / 3 ) ~ "\n\n"
+    ~ ( `string` ~ "string" ~ 'string' ) ~ "\n\n---\n\n"
+)
+```
 ## Installation
 
 Install the [DMD 2 compiler](https://dlang.org/download.html) (using the MinGW setup option on Windows).
