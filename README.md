@@ -4,95 +4,17 @@
 
 Database converter.
 
-### Template syntax
+## Import format
 
-The table data can be converted to text files using Lisp-like templates which will be applied to each row of each table.
+*   CSV
+*   SQL
 
-#### Constants
+## Export format
 
-```javascript
-false
-true
+*   Basil
+*   Custom
 
-123
-
-123.456
-
-`this is
-a string`
-
-"this is
-a string"
-
-'this is
-a string'
-```
-
-#### Variables
-
-```javascript
-table.Name
-table.RowIndex
-table.RowCount
-row.<column name>
-```
-
-#### Operators
-
-```javascript
-( !true )
-( true & true & false )
-( false | false | true )
-( 1 < 2 )
-( 1 <= 2 )
-( 1 != 2 )
-( 1 == 2 )
-( 1 >= 2 )
-( 1 > 2 )
-( "a" < "b" )
-( "a" <= "b" )
-( "a" != "b" )
-( "a" == "b" )
-( "a" >= "b" )
-( "a" > "b" )
-( ( 1 < 2 ) ? "then" )
-( ( 1 < 2 ) ? "then" : "else" )
-( 1 + 2 + 3 )
-( 1 - 2 - 3 )
-( 1 * 2 * 3 )
-( 1 / 2 / 3 )
-( `string` ~ "string" ~ 'string' )
-```
-
-#### Filters
-
-```javascript
-value.Boolean
-value.Number
-value.String
-value.Strip
-value.StripLeft
-value.StripRight
-value.MinorCase
-value.MajorCase
-value.UpperCase
-value.LowerCase
-value.PascalCase
-value.CamelCase
-value.SnakeCase
-value.SlugCase
-value.Basil
-```
-
-#### Functions
-
-```javascript
-( HasPrefix "abcdef" "abc" )
-( HasSuffix "abcdef" "def" )
-( Replace "abcdabcd" "abcd" "xyz" )
-```
-
-#### Sample
+The imported data can be exported to custom text files using a Lisp-like syntax.
 
 ```javascript
 (
@@ -130,6 +52,93 @@ value.Basil
     ~ ( `string` ~ "string" ~ 'string' ) ~ "\n\n---\n\n"
 )
 ```
+
+## Template syntax
+
+### Constants
+
+```javascript
+false
+true
+
+123
+
+123.456
+
+`this is
+a string`
+
+"this is
+a string"
+
+'this is
+a string'
+```
+
+### Variables
+
+```javascript
+table.Name
+table.RowIndex
+table.RowCount
+row.<column name>
+```
+
+### Operators
+
+```javascript
+( !true )
+( true & true & false )
+( false | false | true )
+( 1 < 2 )
+( 1 <= 2 )
+( 1 != 2 )
+( 1 == 2 )
+( 1 >= 2 )
+( 1 > 2 )
+( "a" < "b" )
+( "a" <= "b" )
+( "a" != "b" )
+( "a" == "b" )
+( "a" >= "b" )
+( "a" > "b" )
+( ( 1 < 2 ) ? "then" )
+( ( 1 < 2 ) ? "then" : "else" )
+( 1 + 2 + 3 )
+( 1 - 2 - 3 )
+( 1 * 2 * 3 )
+( 1 / 2 / 3 )
+( `string` ~ "string" ~ 'string' )
+```
+
+### Filters
+
+```javascript
+value.Boolean
+value.Number
+value.String
+value.Strip
+value.StripLeft
+value.StripRight
+value.MinorCase
+value.MajorCase
+value.UpperCase
+value.LowerCase
+value.PascalCase
+value.CamelCase
+value.SnakeCase
+value.SlugCase
+value.Basil
+```
+
+### Functions
+
+```javascript
+( HasPrefix "abcdef" "abc" )
+( HasSuffix "abcdef" "def" )
+( Replace "abcdabcd" "abcd" "xyz" )
+```
+
 ## Installation
 
 Install the [DMD 2 compiler](https://dlang.org/download.html) (using the MinGW setup option on Windows).
