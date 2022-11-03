@@ -302,7 +302,7 @@ struct VALUE
     {
         Type = VALUE_TYPE.Number;
         Text = text;
-        Number = text.to!double();
+        Number = text.GetReal();
     }
 
     // ~~
@@ -313,7 +313,7 @@ struct VALUE
     {
         Type = VALUE_TYPE.Number;
         Text = number.to!string();
-        Number = number.to!double();
+        Number = number.GetReal();
     }
 
     // ~~
@@ -1459,11 +1459,11 @@ class SCHEMA
         )
     {
         long
+            column_value_index,
             value_index;
         COLUMN
             column;
         VALUE
-            column_value,
             default_value,
             property_value,
             variable_value;
@@ -1518,28 +1518,29 @@ class SCHEMA
 
                     if ( column !is null )
                     {
-                        column_value.SetString( "" );
-
                         if ( variable_value.IsIdentifier( "row" ) )
                         {
-                            column_value = column.ValueArray[ row_index ];
-                        }
-                        else if ( variable_value.Text.startsWith( "row_above_" ) )
-                        {
-                            column_value = column.GetValue( row_index - variable_value.Text[ 10 .. $ ].to!long(), default_value );
-                        }
-                        else if ( variable_value.Text.startsWith( "row_below_" ) )
-                        {
-                            column_value = column.GetValue( row_index + variable_value.Text[ 10 .. $ ].to!long(), default_value );
+                            column_value_index = row_index;
                         }
                         else if ( variable_value.Text.startsWith( "row_" ) )
                         {
-                            column_value = column.GetValue( variable_value.Text[ 4 .. $ ].to!long(), default_value );
+                            if ( variable_value.Text.endsWith( "_above" ) )
+                            {
+                                column_value_index = row_index - variable_value.Text[ 4 .. $ - 6 ].GetInteger();
+                            }
+                            else if ( variable_value.Text.endsWith( "_below" ) )
+                            {
+                                column_value_index = row_index + variable_value.Text[ 4 .. $ - 6 ].GetInteger();
+                            }
+                            else
+                            {
+                                column_value_index = variable_value.Text[ 4 .. $ ].GetInteger();
+                            }
                         }
 
                         result_value_array
                             = result_value_array[ 0 .. value_index ]
-                              ~ column_value
+                              ~ column.GetValue( column_value_index, default_value )
                               ~ result_value_array[ value_index + 3 .. $ ];
                     }
                     else
@@ -2120,6 +2121,33 @@ bool IsSpaceCharacter(
         character == dchar( ' ' )
         || character == dchar( '\t' )
         || character == dchar( 0xA0 );
+}
+
+// ~~
+
+long GetInteger(
+    string text
+    )
+{
+    return text.to!long();
+}
+
+// ~~
+
+double GetReal(
+    long integer
+    )
+{
+    return integer.to!double();
+}
+
+// ~~
+
+double GetReal(
+    string text
+    )
+{
+    return text.to!double();
 }
 
 // ~~

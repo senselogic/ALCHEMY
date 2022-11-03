@@ -83,8 +83,8 @@ table.RowIndex
 table.RowCount
 row.<column name>
 row_<index>.<column name>
-row_above_<offset>.<column name>
-row_below_<offset>.<column name>
+row_<offset>_above.<column name>
+row_<offset>_below.<column name>
 ```
 
 ### Operators
