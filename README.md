@@ -6,13 +6,13 @@ Database converter.
 
 ## Import formats
 
-*   CSV
-*   SQL
+*   CSV file
+*   SQL file
 
 ## Export formats
 
-*   Basil
-*   Custom
+*   Basil data file
+*   Custom text file
 
 ## Template syntax
 
@@ -82,6 +82,9 @@ table.Name
 table.RowIndex
 table.RowCount
 row.<column name>
+row_<index>.<column name>
+row_above_<offset>.<column name>
+row_below_<offset>.<column name>
 ```
 
 ### Operators
@@ -128,15 +131,16 @@ value.PascalCase
 value.CamelCase
 value.SnakeCase
 value.SlugCase
-value.Basil
+value.BasilData
 ```
 
 ### Functions
 
 ```javascript
-( HasPrefix "abcdef" "abc" )
-( HasSuffix "abcdef" "def" )
-( Replace "abcdabcd" "abcd" "xyz" )
+( Contains "abcde" "cd" )
+( HasPrefix "abcde" "abc" )
+( HasSuffix "abcde" "def" )
+( Replace "abcdabcd" "abc" "xyz" )
 ```
 
 ## Installation

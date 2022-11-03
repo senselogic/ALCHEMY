@@ -386,6 +386,24 @@ class COLUMN
     long
         CellIndex;
 
+    // -- INQUIRIES
+
+    VALUE GetValue(
+        long value_index,
+        VALUE default_value
+        )
+    {
+        if ( value_index >= 0
+             && value_index < ValueArray.length )
+        {
+            return ValueArray[ value_index ];
+        }
+        else
+        {
+            return default_value;
+        }
+    }
+
     // -- OPERATIONS
 
     void AddValue(
@@ -1445,8 +1463,12 @@ class SCHEMA
         COLUMN
             column;
         VALUE
+            column_value,
+            default_value,
             property_value,
             variable_value;
+
+        default_value.SetString( "" );
 
         for ( value_index = 0;
               value_index + 2 < result_value_array.length;
@@ -1489,15 +1511,35 @@ class SCHEMA
                         = result_value_array[ 0 .. value_index + 1 ]
                           ~ result_value_array[ value_index + 3 .. $ ];
                 }
-                else if ( variable_value.IsIdentifier( "row" ) )
+                else if ( variable_value.IsIdentifier( "row" )
+                          || variable_value.Text.startsWith( "row_" ) )
                 {
                     column = table.FindColumn( property_value.Text );
 
                     if ( column !is null )
                     {
+                        column_value.SetString( "" );
+
+                        if ( variable_value.IsIdentifier( "row" ) )
+                        {
+                            column_value = column.ValueArray[ row_index ];
+                        }
+                        else if ( variable_value.Text.startsWith( "row_above_" ) )
+                        {
+                            column_value = column.GetValue( row_index - variable_value.Text[ 10 .. $ ].to!long(), default_value );
+                        }
+                        else if ( variable_value.Text.startsWith( "row_below_" ) )
+                        {
+                            column_value = column.GetValue( row_index + variable_value.Text[ 10 .. $ ].to!long(), default_value );
+                        }
+                        else if ( variable_value.Text.startsWith( "row_" ) )
+                        {
+                            column_value = column.GetValue( variable_value.Text[ 4 .. $ ].to!long(), default_value );
+                        }
+
                         result_value_array
                             = result_value_array[ 0 .. value_index ]
-                              ~ column.ValueArray[ row_index ]
+                              ~ column_value
                               ~ result_value_array[ value_index + 3 .. $ ];
                     }
                     else
@@ -1616,7 +1658,7 @@ class SCHEMA
                     result_value.SetString( argument_value.Text.GetSlugCaseText() );
                 }
                 else if ( argument_value.IsString()
-                          && property_value.IsIdentifier( "Basil" ) )
+                          && property_value.IsIdentifier( "BasilData" ) )
                 {
                     result_value.SetString( argument_value.Text.GetBasilText() );
                 }
@@ -1815,6 +1857,15 @@ class SCHEMA
                                     );
                             }
                         }
+                    }
+                    else if ( value_array.length == 3
+                              && value_array[ 0 ].IsIdentifier( "Contains" )
+                              && value_array[ 1 ].IsString()
+                              && value_array[ 2 ].IsString() )
+                    {
+                        result_value.SetBoolean(
+                            value_array[ 1 ].Text.indexOf( value_array[ 2 ].Text ) >= 0
+                            );
                     }
                     else if ( value_array.length == 3
                               && value_array[ 0 ].IsIdentifier( "HasPrefix" )
