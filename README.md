@@ -143,7 +143,7 @@ value.Csv
 ### Functions
 
 ```javascript
-( Contains "abcde" "cd" )
+( Contains "abcde" "bcd" )
 ( HasPrefix "abcde" "abc" )
 ( HasSuffix "abcde" "def" )
 ( Replace "abcdabcd" "abc" "xyz" )
