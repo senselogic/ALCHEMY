@@ -2,7 +2,7 @@
     (
         ( table.Name == "CHARACTER" ) ?
         (
-            table.Name ~ " " ~ table.RowIndex ~ "/" ~ table.RowCount ~
+            table.Name ~ " " ~ ( table.RowIndex + 1 ) ~ "/" ~ table.RowCount ~
             " :  " ~ row.FirstName ~ " " ~ row.LastName ~
             " (" ~ ( Replace ( row.Race ).UpperCase "HOBBIT" "Hobbit" ) ~ ")\n\n" ~
             row.Description ~ "\n\n" ~

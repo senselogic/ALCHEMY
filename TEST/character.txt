@@ -1,4 +1,4 @@
-CHARACTER 0/13 :  Amaranth Brandybuck (Hobbit)
+CHARACTER 1/13 :  Amaranth Brandybuck (Hobbit)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -42,7 +42,7 @@ stringstringstring
 
 ---
 
-CHARACTER 1/13 :  Amethyst Hornblower (Hobbit)
+CHARACTER 2/13 :  Amethyst Hornblower (Hobbit)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -86,7 +86,7 @@ stringstringstring
 
 ---
 
-CHARACTER 2/13 :  Belladonna Goodchild (Hobbit)
+CHARACTER 3/13 :  Belladonna Goodchild (Hobbit)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -130,7 +130,7 @@ stringstringstring
 
 ---
 
-CHARACTER 3/13 :  Beren Erchamion (MAN)
+CHARACTER 4/13 :  Beren Erchamion (MAN)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -174,7 +174,7 @@ stringstringstring
 
 ---
 
-CHARACTER 4/13 :  Frodo Baggins (Hobbit)
+CHARACTER 5/13 :  Frodo Baggins (Hobbit)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -218,7 +218,7 @@ stringstringstring
 
 ---
 
-CHARACTER 5/13 :  Gildor Inglorion (ELF)
+CHARACTER 6/13 :  Gildor Inglorion (ELF)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -262,7 +262,7 @@ stringstringstring
 
 ---
 
-CHARACTER 6/13 :  Grìma Wormtongue (MAN)
+CHARACTER 7/13 :  Grìma Wormtongue (MAN)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -306,7 +306,7 @@ stringstringstring
 
 ---
 
-CHARACTER 7/13 :  Helm Hammerhand (MAN)
+CHARACTER 8/13 :  Helm Hammerhand (MAN)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -350,7 +350,7 @@ stringstringstring
 
 ---
 
-CHARACTER 8/13 :  Lalia Clayhanger (Hobbit)
+CHARACTER 9/13 :  Lalia Clayhanger (Hobbit)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -394,7 +394,7 @@ stringstringstring
 
 ---
 
-CHARACTER 9/13 :  Nina Lightfoot (Hobbit)
+CHARACTER 10/13 :  Nina Lightfoot (Hobbit)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -438,7 +438,7 @@ stringstringstring
 
 ---
 
-CHARACTER 10/13 :  Rowlie Appledore (MAN)
+CHARACTER 11/13 :  Rowlie Appledore (MAN)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -482,7 +482,7 @@ stringstringstring
 
 ---
 
-CHARACTER 11/13 :  Sigismond Took (Hobbit)
+CHARACTER 12/13 :  Sigismond Took (Hobbit)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -526,7 +526,7 @@ stringstringstring
 
 ---
 
-CHARACTER 12/13 :  Wilibald Bolger (Hobbit)
+CHARACTER 13/13 :  Wilibald Bolger (Hobbit)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 

@@ -1,4 +1,4 @@
-dmd -m64 basalt.d
+dmd -m64 shift.d
 del /q *.obj
 del /q *.pdb
 pause

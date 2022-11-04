@@ -1,4 +1,4 @@
 #!/bin/sh
 set -x
-dmd -m64 basalt.d
+dmd -m64 shift.d
 rm *.o

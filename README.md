@@ -1,18 +1,19 @@
-![](https://github.com/senselogic/BASALT/blob/master/LOGO/basalt.png)
+![](https://github.com/senselogic/SHIFT/blob/master/LOGO/shift.png)
 
-# Basalt
+# Shift
 
 Database converter.
 
 ## Import formats
 
-*   CSV file
 *   SQL file
+*   CSV file
 
 ## Export formats
 
 *   Basil data file
-*   Custom text file
+*   CSV file
+*   Text file
 
 ## Template syntax
 
@@ -23,7 +24,7 @@ The table rows can be exported to custom text files using a Lisp-like syntax.
     (
         ( table.Name == "CHARACTER" ) ?
         (
-            table.Name ~ " " ~ table.RowIndex ~ "/" ~ table.RowCount ~
+            table.Name ~ " " ~ ( table.RowIndex + 1 ) ~ "/" ~ table.RowCount ~
             " :  " ~ row.FirstName ~ " " ~ row.LastName ~
             " (" ~ ( Replace ( row.Race ).UpperCase "HOBBIT" "Hobbit" ) ~ ")\n\n" ~
             row.Description ~ "\n\n" ~
@@ -81,10 +82,14 @@ a string`
 table.Name
 table.RowIndex
 table.RowCount
+
 row.<column name>
+prior_row.<column name>
+next_row.<column name>
+
 row_<index>.<column name>
-row_<offset>_above.<column name>
-row_<offset>_below.<column name>
+prior_row_<offset>.<column name>
+next_row_<offset>.<column name>
 ```
 
 ### Operators
@@ -150,43 +155,50 @@ Install the [DMD 2 compiler](https://dlang.org/download.html) (using the MinGW s
 Build the executable with the following command line :
 
 ```bash
-dmd -m64 basalt.d
+dmd -m64 shift.d
 ```
 
 ## Command line
 
 ```
-basalt [options]
+shift [options]
 ```
 
 ### Options
 
 ```
---read-csv <data file path> <table name> : read a CSV data file
 --read-sql <data file path> : read an SQL data file
+--read-csv <data file path> <table name> : read a CSV data file
 --write-bd <data file path> : write a Basil data file
---process <template file path> <output file path> : apply a template file
+--write-csv <data file path> <table name> : write a CSV data file
+--write-txt <template file path> <output file path> : write a text file
 ```
 
 ### Examples
 
 ```bash
-basalt --read-csv character.csv --write-bd character.bd
-```
-
-Reads a CSV data file and writes a Basil data file.
-
-```bash
-basalt --read-csv player.csv --read-bt player.bt --write-txt player.txt
-```
-
-Reads a CSV data file and writes a Basil data file.
-
-```bash
-basalt --read-sql blog.sql --write-bd blog.bd
+shift --read-sql blog.sql --write-bd blog.bd
 ```
 
 Reads an SQL data file and writes a Basil data file.
+
+```bash
+shift --read-sql blog.sql --write-csv blog_article.csv ARTICLE --write-csv blog_comment.csv COMMENT
+```
+
+Reads an SQL data file and writes CSV data files.
+
+```bash
+shift --read-csv character.csv --write-bd character.bd
+```
+
+Reads a CSV data file and writes a Basil data file.
+
+```bash
+shift --read-csv character.csv --write-txt character.txt character.st
+```
+
+Reads a CSV data file and writes a text file.
 
 ## Limitations
 
