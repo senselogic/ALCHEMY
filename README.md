@@ -203,7 +203,7 @@ Reads a CSV data file and writes a text file.
 
 ## Limitations
 
-*   Template operators are applied in their declaration order.
+*   Operators are applied without precedence.
 
 ## Version
 
