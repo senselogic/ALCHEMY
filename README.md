@@ -146,7 +146,7 @@ value.Csv
 ( Contains "abcde" "bcd" )
 ( HasPrefix "abcde" "abc" )
 ( HasSuffix "abcde" "def" )
-( Replace "abcdabcd" "abc" "xyz" )
+( Replace "abcde abcde" "bcd" "xyz" )
 ```
 
 ## Installation
