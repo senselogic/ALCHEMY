@@ -6,14 +6,14 @@ Database converter.
 
 ## Import formats
 
-*   SQL file
-*   CSV file
+*   SQL
+*   CSV
 
 ## Export formats
 
-*   Basil data file
-*   CSV file
-*   Text file
+*   Basil
+*   CSV
+*   Text
 
 ## Template syntax
 
@@ -119,7 +119,7 @@ next_row_<offset>.<column name>
 ( "string" ~ 'string' ~ `string` )
 ```
 
-### Filters
+### Methods
 
 ```javascript
 value.Boolean
@@ -136,7 +136,8 @@ value.PascalCase
 value.CamelCase
 value.SnakeCase
 value.SlugCase
-value.BasilData
+value.Basil
+value.Csv
 ```
 
 ### Functions

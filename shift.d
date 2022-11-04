@@ -1205,9 +1205,14 @@ class SCHEMA
                     result_value.SetString( argument_value.Text.GetSlugCaseText() );
                 }
                 else if ( argument_value.IsString()
-                          && property_value.IsIdentifier( "BasilData" ) )
+                          && property_value.IsIdentifier( "Basil" ) )
                 {
                     result_value.SetString( argument_value.Text.GetBasilText() );
+                }
+                else if ( argument_value.IsString()
+                          && property_value.IsIdentifier( "Csv" ) )
+                {
+                    result_value.SetString( argument_value.Text.GetCsvText() );
                 }
                 else
                 {
