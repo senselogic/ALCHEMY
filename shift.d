@@ -2399,6 +2399,25 @@ string GetUpperCaseText(
 
 // ~~
 
+string GetSpacedText(
+    string text
+    )
+{
+    foreach ( character; [ '\t', '_', '-', ',', ';', ':', '.', '!', '?' ] )
+    {
+        text = text.replace( character, ' ' );
+    }
+
+    while ( text.indexOf( "  " ) >= 0 )
+    {
+        text = text.replace( "  ", " " );
+    }
+
+    return text;
+}
+
+// ~~
+
 string GetPascalCaseText(
     string text
     )
@@ -2406,7 +2425,7 @@ string GetPascalCaseText(
     string[]
         word_array;
 
-    word_array = text.replace( '_', '_' ).replace( '-', ' ' ).split( ' ' );
+    word_array = text.GetSpacedText().strip().split( ' ' );
 
     foreach ( ref word; word_array )
     {
@@ -2423,25 +2442,6 @@ string GetCamelCaseText(
     )
 {
     return text.GetPascalCaseText().GetMinorCaseText();
-}
-
-// ~~
-
-string GetSpacedText(
-    string text
-    )
-{
-    foreach ( character; [ '\t', '_', '-', ',', ';', ':', '.', '!', '?' ] )
-    {
-        text = text.replace( character, ' ' );
-    }
-
-    while ( text.indexOf( "  " ) >= 0 )
-    {
-        text = text.replace( "  ", " " );
-    }
-
-    return text;
 }
 
 // ~~
@@ -2493,11 +2493,17 @@ string GetSnakeCaseText(
             snake_case_text ~= '_';
         }
 
+        if ( character == ' '
+             && !snake_case_text.endsWith( '_' ) )
+        {
+            character = '_';
+        }
+
         snake_case_text ~= character;
         prior_character = character;
     }
 
-    return snake_case_text.to!string();
+    return snake_case_text.to!string().toLower();
 }
 
 // ~~
