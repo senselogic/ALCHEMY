@@ -1,6 +1,6 @@
-![](https://github.com/senselogic/SHIFT/blob/master/LOGO/shift.png)
+![](https://github.com/senselogic/SWITCH/blob/master/LOGO/switch.png)
 
-# Shift
+# Switch
 
 Database converter.
 
@@ -156,13 +156,13 @@ Install the [DMD 2 compiler](https://dlang.org/download.html) (using the MinGW s
 Build the executable with the following command line :
 
 ```bash
-dmd -m64 shift.d
+dmd -m64 switch.d
 ```
 
 ## Command line
 
 ```
-shift [options]
+switch [options]
 ```
 
 ### Options
@@ -178,25 +178,25 @@ shift [options]
 ### Examples
 
 ```bash
-shift --read-sql blog.sql --write-bd blog.bd
+switch --read-sql blog.sql --write-bd blog.bd
 ```
 
 Reads an SQL data file and writes a Basil data file.
 
 ```bash
-shift --read-sql blog.sql --write-csv blog_article.csv ARTICLE --write-csv blog_comment.csv COMMENT
+switch --read-sql blog.sql --write-csv blog_article.csv ARTICLE --write-csv blog_comment.csv COMMENT
 ```
 
 Reads an SQL data file and writes CSV data files.
 
 ```bash
-shift --read-csv character.csv --write-bd character.bd
+switch --read-csv character.csv --write-bd character.bd
 ```
 
 Reads a CSV data file and writes a Basil data file.
 
 ```bash
-shift --read-csv character.csv --write-txt character.txt character.st
+switch --read-csv character.csv --write-txt character.txt character.st
 ```
 
 Reads a CSV data file and writes a text file.

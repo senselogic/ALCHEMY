@@ -1,21 +1,21 @@
 /*
-    This file is part of the Shift distribution.
+    This file is part of the Switch distribution.
 
-    https://github.com/senselogic/SHIFT
+    https://github.com/senselogic/SWITCH
 
     Copyright (C) 2017 Eric Pelzer (ecstatic.coder@gmail.com)
 
-    Shift is free software: you can redistribute it and/or modify
+    Switch is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, version 3.
 
-    Shift is distributed in the hope that it will be useful,
+    Switch is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Shift.  If not, see <http://www.gnu.org/licenses/>.
+    along with Switch.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 // -- IMPORTS
@@ -1416,7 +1416,7 @@ class SCHEMA
                               && value_array[ 2 ].IsString() )
                     {
                         result_value.SetBoolean(
-                            value_array[ 1 ].Text.indexOf( value_array[ 2 ].Text ) >= 0
+                            ContainsText( value_array[ 1 ].Text, value_array[ 2 ].Text )
                             );
                     }
                     else if ( value_array.length == 3
@@ -1425,7 +1425,7 @@ class SCHEMA
                               && value_array[ 2 ].IsString() )
                     {
                         result_value.SetBoolean(
-                            value_array[ 1 ].Text.startsWith( value_array[ 2 ].Text )
+                            HasPrefix( value_array[ 1 ].Text, value_array[ 2 ].Text )
                             );
                     }
                     else if ( value_array.length == 3
@@ -1434,7 +1434,63 @@ class SCHEMA
                               && value_array[ 2 ].IsString() )
                     {
                         result_value.SetBoolean(
-                            value_array[ 1 ].Text.endsWith( value_array[ 2 ].Text )
+                            HasSuffix( value_array[ 1 ].Text, value_array[ 2 ].Text )
+                            );
+                    }
+                    else if ( value_array.length == 3
+                              && value_array[ 0 ].IsIdentifier( "GetPrefix" )
+                              && value_array[ 1 ].IsString()
+                              && value_array[ 2 ].IsString() )
+                    {
+                        result_value.SetString(
+                            GetPrefix( value_array[ 1 ].Text, value_array[ 2 ].Text )
+                            );
+                    }
+                    else if ( value_array.length == 3
+                              && value_array[ 0 ].IsIdentifier( "GetSuffix" )
+                              && value_array[ 1 ].IsString()
+                              && value_array[ 2 ].IsString() )
+                    {
+                        result_value.SetString(
+                            GetSuffix( value_array[ 1 ].Text, value_array[ 2 ].Text )
+                            );
+                    }
+                    else if ( value_array.length == 3
+                              && value_array[ 0 ].IsIdentifier( "RemovePrefix" )
+                              && value_array[ 1 ].IsString()
+                              && value_array[ 2 ].IsString() )
+                    {
+                        result_value.SetString(
+                            RemovePrefix( value_array[ 1 ].Text, value_array[ 2 ].Text )
+                            );
+                    }
+                    else if ( value_array.length == 3
+                              && value_array[ 0 ].IsIdentifier( "RemoveSuffix" )
+                              && value_array[ 1 ].IsString()
+                              && value_array[ 2 ].IsString() )
+                    {
+                        result_value.SetString(
+                            RemoveSuffix( value_array[ 1 ].Text, value_array[ 2 ].Text )
+                            );
+                    }
+                    else if ( value_array.length == 4
+                              && value_array[ 0 ].IsIdentifier( "ReplacePrefix" )
+                              && value_array[ 1 ].IsString()
+                              && value_array[ 2 ].IsString()
+                              && value_array[ 3 ].IsString() )
+                    {
+                        result_value.SetString(
+                            ReplacePrefix( value_array[ 1 ].Text, value_array[ 2 ].Text, value_array[ 3 ].Text )
+                            );
+                    }
+                    else if ( value_array.length == 4
+                              && value_array[ 0 ].IsIdentifier( "ReplaceSuffix" )
+                              && value_array[ 1 ].IsString()
+                              && value_array[ 2 ].IsString()
+                              && value_array[ 3 ].IsString() )
+                    {
+                        result_value.SetString(
+                            ReplaceSuffix( value_array[ 1 ].Text, value_array[ 2 ].Text, value_array[ 3 ].Text )
                             );
                     }
                     else if ( value_array.length == 4
@@ -1444,7 +1500,7 @@ class SCHEMA
                               && value_array[ 3 ].IsString() )
                     {
                         result_value.SetString(
-                            value_array[ 1 ].Text.replace( value_array[ 2 ].Text, value_array[ 3 ].Text )
+                            ReplaceText( value_array[ 1 ].Text, value_array[ 2 ].Text, value_array[ 3 ].Text )
                             );
                     }
                     else
@@ -2273,6 +2329,137 @@ double GetReal(
 
 // ~~
 
+bool ContainsText(
+    string text,
+    string searched_text
+    )
+{
+    return text.indexOf( searched_text ) >= 0;
+}
+
+// ~~
+
+bool HasPrefix(
+    string text,
+    string prefix
+    )
+{
+    return text.startsWith( prefix );
+}
+
+// ~~
+
+bool HasSuffix(
+    string text,
+    string suffix
+    )
+{
+    return text.endsWith( suffix );
+}
+
+// ~~
+
+string GetPrefix(
+    string text,
+    string separator
+    )
+{
+    return text.split( separator )[ 0 ];
+}
+
+// ~~
+
+string GetSuffix(
+    string text,
+    string separator
+    )
+{
+    return text.split( separator )[ $ - 1 ];
+}
+
+// ~~
+
+string RemovePrefix(
+    string text,
+    string prefix
+    )
+{
+    if ( text.startsWith( prefix ) )
+    {
+        return text[ prefix.length .. $ ];
+    }
+    else
+    {
+        return text;
+    }
+}
+
+// ~~
+
+string RemoveSuffix(
+    string text,
+    string suffix
+    )
+{
+    if ( text.endsWith( suffix ) )
+    {
+        return text[ 0 .. $ - suffix.length ];
+    }
+    else
+    {
+        return text;
+    }
+}
+
+// ~~
+
+string ReplacePrefix(
+    string text,
+    string old_prefix,
+    string new_prefix
+    )
+{
+    if ( text.startsWith( old_prefix ) )
+    {
+        return new_prefix ~ text[ old_prefix.length .. $ ];
+    }
+    else
+    {
+        return text;
+    }
+}
+
+// ~~
+
+string ReplaceSuffix(
+    string text,
+    string old_suffix,
+    string new_suffix
+    )
+{
+    if ( text.endsWith( old_suffix ) )
+    {
+        return text[ 0 .. $ - old_suffix.length ] ~ new_suffix;
+    }
+    else
+    {
+        return text;
+    }
+}
+
+// ~~
+
+string ReplaceText(
+    string text,
+    string old_text,
+    string new_text
+    )
+{
+    return text.replace( old_text, new_text );
+}
+
+// ~~
+
 string GetStrippedText(
     string text
     )
@@ -2738,17 +2925,17 @@ void main(
     if ( argument_array.length > 0 )
     {
         writeln( "Usage :" );
-        writeln( "    shift [options]" );
+        writeln( "    switch [options]" );
         writeln( "Options :" );
         writeln( "    --read-sql <data file path>" );
         writeln( "    --read-csv <data file path> <table name>" );
         writeln( "    --write-bd <data file path>" );
         writeln( "    --write-txt <template file path> <output file path>" );
         writeln( "Examples :" );
-        writeln( "    shift --read-sql blog.sql --write-bd blog.bd" );
-        writeln( "    shift --read-sql blog.sql --write-csv blog.csv" );
-        writeln( "    shift --read-csv character.csv --write-bd character.bd" );
-        writeln( "    shift --read-csv character.csv --write-txt character.st character.txt" );
+        writeln( "    switch --read-sql blog.sql --write-bd blog.bd" );
+        writeln( "    switch --read-sql blog.sql --write-csv blog.csv" );
+        writeln( "    switch --read-csv character.csv --write-bd character.bd" );
+        writeln( "    switch --read-csv character.csv --write-txt character.st character.txt" );
 
         Abort( "Invalid arguments : " ~ argument_array.to!string( ) );
     }
