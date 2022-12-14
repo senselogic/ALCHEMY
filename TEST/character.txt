@@ -1,4 +1,4 @@
-CHARACTER 1/13 :  Amaranth Brandybuck (Hobbit)
+CHARACTER 1/13 :  Amaranth Brandybuck (HOBBIT)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -11,38 +11,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières.¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières.¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières.¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера.¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
 ---
-
-false
-false
-true
-
-true
-true
-true
-false
-false
-false
-
-true
-true
-true
-false
-false
-false
-
-then
-then
-
-6
--4
-6
-0.166667
-
-stringstringstring
-
----
-
-CHARACTER 2/13 :  Amethyst Hornblower (Hobbit)
+CHARACTER 2/13 :  Amethyst Hornblower (HOBBIT)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -55,38 +24,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières.¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières.¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières.¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера.¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
 ---
-
-false
-false
-true
-
-true
-true
-true
-false
-false
-false
-
-true
-true
-true
-false
-false
-false
-
-then
-then
-
-6
--4
-6
-0.166667
-
-stringstringstring
-
----
-
-CHARACTER 3/13 :  Belladonna Goodchild (Hobbit)
+CHARACTER 3/13 :  Belladonna Goodchild (HOBBIT)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -99,37 +37,6 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières.¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières.¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières.¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера.¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
 ---
-
-false
-false
-true
-
-true
-true
-true
-false
-false
-false
-
-true
-true
-true
-false
-false
-false
-
-then
-then
-
-6
--4
-6
-0.166667
-
-stringstringstring
-
----
-
 CHARACTER 4/13 :  Beren Erchamion (MAN)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -143,38 +50,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières.¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières.¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières.¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера.¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
 ---
-
-false
-false
-true
-
-true
-true
-true
-false
-false
-false
-
-true
-true
-true
-false
-false
-false
-
-then
-then
-
-6
--4
-6
-0.166667
-
-stringstringstring
-
----
-
-CHARACTER 5/13 :  Frodo Baggins (Hobbit)
+CHARACTER 5/13 :  Frodo Baggins (HOBBIT)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -187,37 +63,6 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières.¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières.¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières.¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера.¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
 ---
-
-false
-false
-true
-
-true
-true
-true
-false
-false
-false
-
-true
-true
-true
-false
-false
-false
-
-then
-then
-
-6
--4
-6
-0.166667
-
-stringstringstring
-
----
-
 CHARACTER 6/13 :  Gildor Inglorion (ELF)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -231,37 +76,6 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières.¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières.¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières.¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера.¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
 ---
-
-false
-false
-true
-
-true
-true
-true
-false
-false
-false
-
-true
-true
-true
-false
-false
-false
-
-then
-then
-
-6
--4
-6
-0.166667
-
-stringstringstring
-
----
-
 CHARACTER 7/13 :  Grìma Wormtongue (MAN)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -275,37 +89,6 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières.¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières.¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières.¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера.¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
 ---
-
-false
-false
-true
-
-true
-true
-true
-false
-false
-false
-
-true
-true
-true
-false
-false
-false
-
-then
-then
-
-6
--4
-6
-0.166667
-
-stringstringstring
-
----
-
 CHARACTER 8/13 :  Helm Hammerhand (MAN)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -319,38 +102,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières.¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières.¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières.¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера.¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
 ---
-
-false
-false
-true
-
-true
-true
-true
-false
-false
-false
-
-true
-true
-true
-false
-false
-false
-
-then
-then
-
-6
--4
-6
-0.166667
-
-stringstringstring
-
----
-
-CHARACTER 9/13 :  Lalia Clayhanger (Hobbit)
+CHARACTER 9/13 :  Lalia Clayhanger (HOBBIT)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -363,38 +115,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières.¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières.¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières.¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера.¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
 ---
-
-false
-false
-true
-
-true
-true
-true
-false
-false
-false
-
-true
-true
-true
-false
-false
-false
-
-then
-then
-
-6
--4
-6
-0.166667
-
-stringstringstring
-
----
-
-CHARACTER 10/13 :  Nina Lightfoot (Hobbit)
+CHARACTER 10/13 :  Nina Lightfoot (HOBBIT)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -407,37 +128,6 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières.¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières.¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières.¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера.¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
 ---
-
-false
-false
-true
-
-true
-true
-true
-false
-false
-false
-
-true
-true
-true
-false
-false
-false
-
-then
-then
-
-6
--4
-6
-0.166667
-
-stringstringstring
-
----
-
 CHARACTER 11/13 :  Rowlie Appledore (MAN)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -451,38 +141,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières.¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières.¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières.¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера.¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
 ---
-
-false
-false
-true
-
-true
-true
-true
-false
-false
-false
-
-true
-true
-true
-false
-false
-false
-
-then
-then
-
-6
--4
-6
-0.166667
-
-stringstringstring
-
----
-
-CHARACTER 12/13 :  Sigismond Took (Hobbit)
+CHARACTER 12/13 :  Sigismond Took (HOBBIT)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -495,38 +154,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières.¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières.¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières.¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера.¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
 ---
-
-false
-false
-true
-
-true
-true
-true
-false
-false
-false
-
-true
-true
-true
-false
-false
-false
-
-then
-then
-
-6
--4
-6
-0.166667
-
-stringstringstring
-
----
-
-CHARACTER 13/13 :  Wilibald Bolger (Hobbit)
+CHARACTER 13/13 :  Wilibald Bolger (HOBBIT)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -539,34 +167,3 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 Dès le matin du dimanche, des milliers de paysans, arrivant des montagnes voisines, inondèrent les rues de Verrières.¨fr:From the morning of Sunday, thousands of peasants, arriving from the neighboring mountains, flooded the streets of Verrières.¨de:Schon am Sonntagmorgen überschwemmten Tausende von Bauern, die aus den nahegelegenen Bergen kamen, die Straßen von Verrières.¨ru:С утра в воскресенье тысячи крестьян, прибывших с соседних гор, заполонили улицы Верьера.¨ja:日曜日の朝から、近隣の山々からやってきた何千人もの農民がヴェリエールの通りに押し寄せた。
 
 ---
-
-false
-false
-true
-
-true
-true
-true
-false
-false
-false
-
-true
-true
-true
-false
-false
-false
-
-then
-then
-
-6
--4
-6
-0.166667
-
-stringstringstring
-
----
-

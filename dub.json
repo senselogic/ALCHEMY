@@ -1,0 +1,12 @@
+{
+    "authors": [
+        "SenseLogic"
+    ],
+    "copyright": "Copyright © 2022, SenseLogic",
+    "dependencies": {
+        "dmildew": "~>0.5.12"
+    },
+    "description": "Database converter",
+    "license": "GPLv3",
+    "name": "switch"
+}
