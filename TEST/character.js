@@ -16,10 +16,10 @@ for ( let table_index = 0;
 
             file_text
                 += table.Name + " " + ( row_index + 1 ) + "/" + table.RowCount
-                   + " :  " + row.Get( "FirstName" ) + " " + row.Get( "LastName" )
-                   + " (" + GetUpperCase( Replace( row.Get( "Race" ), "HOBBIT", "Hobbit" ) ) + ")\n\n"
-                   + row.Get( "Description" ) + "\n\n"
-                   + row.Get( "Comment" ) + "\n\n"
+                   + " :  " + row.GetValue( "FirstName" ) + " " + row.GetValue( "LastName" )
+                   + " (" + GetUpperCaseText( ReplaceText( row.GetValue( "Race" ), "HOBBIT", "Hobbit" ) ) + ")\n\n"
+                   + row.GetValue( "Description" ) + "\n\n"
+                   + row.GetValue( "Comment" ) + "\n\n"
                    + "---\n";
         }
     }

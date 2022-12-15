@@ -2538,6 +2538,69 @@ ScriptAny SystemReplaceText(
 
 // ~~
 
+ScriptAny GetStrippedText(
+    Environment environment,
+    ScriptAny* self,
+    ScriptAny[] argument_array,
+    ref NativeFunctionError native_function_error
+    )
+{
+    if ( argument_array.length != 1 )
+    {
+        native_function_error = NativeFunctionError.WRONG_NUMBER_OF_ARGS;
+
+        return ScriptAny.UNDEFINED;
+    }
+    else
+    {
+        return ScriptAny( GetStrippedText( argument_array[ 0 ].toString() ) );
+    }
+}
+
+// ~~
+
+ScriptAny GetLeftStrippedText(
+    Environment environment,
+    ScriptAny* self,
+    ScriptAny[] argument_array,
+    ref NativeFunctionError native_function_error
+    )
+{
+    if ( argument_array.length != 1 )
+    {
+        native_function_error = NativeFunctionError.WRONG_NUMBER_OF_ARGS;
+
+        return ScriptAny.UNDEFINED;
+    }
+    else
+    {
+        return ScriptAny( GetLeftStrippedText( argument_array[ 0 ].toString() ) );
+    }
+}
+
+// ~~
+
+ScriptAny GetRightStrippedText(
+    Environment environment,
+    ScriptAny* self,
+    ScriptAny[] argument_array,
+    ref NativeFunctionError native_function_error
+    )
+{
+    if ( argument_array.length != 1 )
+    {
+        native_function_error = NativeFunctionError.WRONG_NUMBER_OF_ARGS;
+
+        return ScriptAny.UNDEFINED;
+    }
+    else
+    {
+        return ScriptAny( GetRightStrippedText( argument_array[ 0 ].toString() ) );
+    }
+}
+
+// ~~
+
 ScriptAny SystemGetMinorCaseText(
     Environment environment,
     ScriptAny* self,
@@ -2816,6 +2879,9 @@ Interpreter CreateInterpreter(
     system_script_object[ "ReplacePrefix" ] = new ScriptFunction( "system.ReplacePrefix", &SystemReplacePrefix );
     system_script_object[ "ReplaceSuffix" ] = new ScriptFunction( "system.ReplaceSuffix", &SystemReplaceSuffix );
     system_script_object[ "ReplaceText" ] = new ScriptFunction( "system.ReplaceText", &SystemReplaceText );
+    system_script_object[ "GetStrippedText" ] = new ScriptFunction( "system.GetStrippedText", &SystemGetMinorCaseText );
+    system_script_object[ "GetLeftStrippedText" ] = new ScriptFunction( "system.GetLeftStrippedText", &SystemGetMajorCaseText );
+    system_script_object[ "GetRightStrippedText" ] = new ScriptFunction( "system.GetRightStrippedText", &SystemGetLowerCaseText );
     system_script_object[ "GetMinorCaseText" ] = new ScriptFunction( "system.GetMinorCaseText", &SystemGetMinorCaseText );
     system_script_object[ "GetMajorCaseText" ] = new ScriptFunction( "system.GetMajorCaseText", &SystemGetMajorCaseText );
     system_script_object[ "GetLowerCaseText" ] = new ScriptFunction( "system.GetLowerCaseText", &SystemGetLowerCaseText );

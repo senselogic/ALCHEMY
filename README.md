@@ -15,9 +15,78 @@ Database converter.
 *   CSV
 *   Text
 
-## Scripting format
+# Scripting
 
-*   JavaScript subset
+## Types
+
+```javascript
+ROW()
+
+    ColumnCount
+    NameArray
+    ValueArray
+
+    AddColumn( name, value )
+    GetValue( name )
+
+TABLE( name )
+
+    Name
+    RowCount
+    RowArray
+    DefaultRow
+    ColumnCount
+    ColumnNameArray
+
+    AddRow( row )
+    GetRow( row_index )
+
+SCHEMA()
+
+    TableCount
+    TableArray
+
+    AddTable( table )
+```
+
+## Variables
+
+```javascript
+schema
+```
+
+## Functions
+
+```javascript
+PrintLine( text )
+GetInteger( text )
+GetReal( text )
+ContainsText( text, searched_text )
+HasPrefix( text, prefix )
+HasSuffix( text, suffix )
+GetPrefix( text, separator )
+GetSuffix( text, separator )
+RemovePrefix( text, prefix )
+RemoveSuffix( text, suffix )
+ReplacePrefix( text, old_prefix, new_prefix )
+ReplaceSuffix( text, old_suffix, new_suffix )
+ReplaceText( text, old_text, new_text )
+GetStrippedText( text )
+GetLeftStrippedText( text )
+GetRightStrippedText( text )
+GetMinorCaseText( text )
+GetMajorCaseText( text )
+GetLowerCaseText( text )
+GetUpperCaseText( text )
+GetPascalCaseText( text )
+GetCamelCaseText( text )
+GetSnakeCaseText( text )
+GetSlugCaseText( text )
+GetBasilText( text )
+GetCsvText( text )
+ReadText( file_path )
+WriteText( file_path, text )
+```
 
 ## Installation
 

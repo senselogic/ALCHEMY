@@ -1,3 +1,3 @@
 #!/bin/sh
 set -x
-dub build
+dub build --build=release
