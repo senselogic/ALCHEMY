@@ -864,15 +864,6 @@ class SCHEMA
         file_path.WriteText( GetCsvText( table_name ) );
     }
 
-    // ~~
-
-    void WriteTxtFile(
-        string file_path,
-        string template_file_path
-        )
-    {
-    }
-
     // -- OPERATIONS
 
     TABLE GetTable(
@@ -1445,6 +1436,34 @@ class SCHEMA
 
     // ~~
 
+    void PrintScript(
+        string script_code
+        )
+    {
+        foreach ( line_index, line; script_code.split( '\n' ) )
+        {
+            writeln( "[", line_index + 1, "] ", line );
+        }
+    }
+
+    // ~~
+
+    void WriteJsFile(
+        string file_path
+        )
+    {
+        string
+            file_text;
+
+        file_text
+            = ReadText( GetExecutablePath( "base.js" ) )
+              ~ GetJsText();
+
+        WriteText( file_path, file_text );
+    }
+
+    // ~~
+
     void RunJsFile(
         string file_path
         )
@@ -1461,11 +1480,6 @@ class SCHEMA
               ~ GetJsText()
               ~ ReadText( file_path );
 
-        foreach ( line_index, line; script_code.split( '\n' ) )
-        {
-            writeln( "[", line_index + 1, "] ", line );
-        }
-
         try
         {
             interpreter = CreateInterpreter();
@@ -1474,11 +1488,13 @@ class SCHEMA
         }
         catch ( ScriptCompileException ex )
         {
+            PrintScript( script_code );
             writeln( "\nIn file " ~ file_path );
             writeln( ex );
         }
         catch ( ScriptRuntimeException ex )
         {
+            PrintScript( script_code );
             writeln( "\nIn file " ~ file_path );
             writeln( ex );
 
@@ -1489,10 +1505,10 @@ class SCHEMA
         }
         catch ( Compiler.UnimplementedException ex )
         {
+            PrintScript( script_code );
             writeln( ex.msg );
         }
     }
-
 }
 
 // -- VARIABLES
@@ -2247,7 +2263,7 @@ string GetExecutablePath(
 
 // ~~
 
-ScriptAny SystemWriteLine(
+ScriptAny SystemPrintLine(
     Environment environment,
     ScriptAny* self,
     ScriptAny[] argument_array,
@@ -2787,7 +2803,7 @@ Interpreter CreateInterpreter(
     interpreter = new Interpreter();
 
     system_script_object = new ScriptObject( "system", null );
-    system_script_object[ "WriteLine" ] = new ScriptFunction( "system.WriteLine", &SystemWriteLine );
+    system_script_object[ "PrintLine" ] = new ScriptFunction( "system.PrintLine", &SystemPrintLine );
     system_script_object[ "GetInteger" ] = new ScriptFunction( "system.GetInteger", &SystemGetInteger );
     system_script_object[ "GetReal" ] = new ScriptFunction( "system.GetReal", &SystemGetReal );
     system_script_object[ "ContainsText" ] = new ScriptFunction( "system.ContainsText", &SystemContainsText );
@@ -2871,6 +2887,12 @@ void main(
         {
             Schema.WriteCsvFile( argument_array[ 0 ], argument_array[ 1 ] );
         }
+        else if ( option == "--write-js"
+                  && argument_count == 1
+                  && argument_array[ 0 ].endsWith( ".js" ) )
+        {
+            Schema.WriteJsFile( argument_array[ 0 ] );
+        }
         else if ( option == "--run-js"
                   && argument_count == 1
                   && argument_array[ 0 ].endsWith( ".js" ) )
@@ -2893,6 +2915,7 @@ void main(
         writeln( "    --read-sql <data file path>" );
         writeln( "    --read-csv <data file path> <table name>" );
         writeln( "    --write-bd <data file path>" );
+        writeln( "    --write-js <script file path>" );
         writeln( "    --run-js <script file path>" );
         writeln( "Examples :" );
         writeln( "    switch --read-sql blog.sql --write-bd blog.bd" );

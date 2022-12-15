@@ -42,7 +42,8 @@ switch [options]
 --read-csv <data file path> <table name> : read a CSV data file
 --write-bd <data file path> : write a Basil data file
 --write-csv <data file path> <table name> : write a CSV data file
---run <script file path> : run a script
+--write-js <script file path> : run a JS script
+--run-js <script file path> : run a JS script
 ```
 
 ### Examples
