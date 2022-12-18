@@ -1,1 +1,1 @@
-dub build --build=release
+dub build

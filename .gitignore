@@ -9,7 +9,6 @@ switch.dll
 switch.a
 switch.lib
 switch-test-*
-*.exe
 *.pdb
 *.o
 *.obj

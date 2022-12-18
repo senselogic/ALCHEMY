@@ -15,12 +15,57 @@ Database converter.
 *   CSV
 *   Text
 
-# Scripting
+## Scripting
 
-## Types
+### Sample
+
+Data processing scripts can be defined using a JavaScript-like syntax.
 
 ```javascript
-ROW()
+let file_text = "";
+
+for ( let table_index = 0;
+      table_index < schema.TableCount;
+      ++table_index )
+{
+    let table = schema.TableArray[ table_index ];
+
+    if ( table.Name == "CHARACTER" )
+    {
+        for ( let row_index = 0;
+              row_index < table.RowCount;
+              ++row_index )
+        {
+            let row = table.RowArray[ row_index ];
+            let next_row = table.GetRow( row_index + 1 );
+
+            if ( row_index == 0 )
+            {
+                file_text +=
+                    "CHARACTER\n\n    Id Slug FirstName LastName Description Race Comment\n";
+            }
+
+            let slug = GetSlugCaseText( row.GetValue( "FirstName" ) + "-" + row.GetValue( "LastName" ) + "-character" );
+
+            file_text +=
+                "\n"
+                + "        %" + slug + "\n"
+                + "             ~ " + slug + "\n"
+                + "             ~ " + GetBasilText( row.GetValue( "FirstName" ) ) + "\n"
+                + "             ~ " + GetBasilText( row.GetValue( "LastName" ) ) + "\n"
+                + "             ~ " + GetBasilText( row.GetValue( "Description" ) ) + "\n"
+                + "             ~ " + GetBasilText( row.GetValue( "Comment" ) ) + "\n";
+        }
+    }
+}
+
+WriteText( "character_js.bd", file_text );
+```
+
+### Types
+
+```javascript
+ROW
 
     ColumnCount
     NameArray
@@ -29,7 +74,7 @@ ROW()
     AddColumn( name, value )
     GetValue( name )
 
-TABLE( name )
+TABLE
 
     Name
     RowCount
@@ -41,7 +86,7 @@ TABLE( name )
     AddRow( row )
     GetRow( row_index )
 
-SCHEMA()
+SCHEMA
 
     TableCount
     TableArray
@@ -49,13 +94,13 @@ SCHEMA()
     AddTable( table )
 ```
 
-## Variables
+### Variables
 
 ```javascript
 schema
 ```
 
-## Functions
+### Functions
 
 ```javascript
 PrintLine( text )

@@ -13,16 +13,26 @@ for ( let table_index = 0;
               ++row_index )
         {
             let row = table.RowArray[ row_index ];
+            let next_row = table.GetRow( row_index + 1 );
 
-            file_text
-                += table.Name + " " + ( row_index + 1 ) + "/" + table.RowCount
-                   + " :  " + row.GetValue( "FirstName" ) + " " + row.GetValue( "LastName" )
-                   + " (" + GetUpperCaseText( ReplaceText( row.GetValue( "Race" ), "HOBBIT", "Hobbit" ) ) + ")\n\n"
-                   + row.GetValue( "Description" ) + "\n\n"
-                   + row.GetValue( "Comment" ) + "\n\n"
-                   + "---\n";
+            if ( row_index == 0 )
+            {
+                file_text +=
+                    "CHARACTER\n\n    Id Slug FirstName LastName Description Race Comment\n";
+            }
+
+            let slug = GetSlugCaseText( row.GetValue( "FirstName" ) + "-" + row.GetValue( "LastName" ) + "-character" );
+
+            file_text +=
+                "\n"
+                + "        %" + slug + "\n"
+                + "             ~ " + slug + "\n"
+                + "             ~ " + GetBasilText( row.GetValue( "FirstName" ) ) + "\n"
+                + "             ~ " + GetBasilText( row.GetValue( "LastName" ) ) + "\n"
+                + "             ~ " + GetBasilText( row.GetValue( "Description" ) ) + "\n"
+                + "             ~ " + GetBasilText( row.GetValue( "Comment" ) ) + "\n";
         }
     }
 }
 
-WriteText( "character.txt", file_text );
+WriteText( "character_js.bd", file_text );
