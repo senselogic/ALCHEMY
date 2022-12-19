@@ -62,7 +62,7 @@ for ( let table_index = 0;
 WriteText( "character_js.bd", file_text );
 ```
 
-### Types
+### Classes
 
 ```javascript
 ROW
@@ -92,12 +92,6 @@ SCHEMA
     TableArray
 
     AddTable( table )
-```
-
-### Variables
-
-```javascript
-schema
 ```
 
 ### Functions
