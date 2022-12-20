@@ -35,7 +35,6 @@ import std.stdio : writeln;
 import std.string : capitalize, endsWith, indexOf, join, replace, split, startsWith, strip, toLower, toStringz, toUpper;
 import std.uni : isAlpha;
 
-
 // -- TYPES
 
 enum VALUE_TYPE
@@ -2538,7 +2537,7 @@ ScriptAny SystemReplaceText(
 
 // ~~
 
-ScriptAny GetStrippedText(
+ScriptAny SystemGetStrippedText(
     Environment environment,
     ScriptAny* self,
     ScriptAny[] argument_array,
@@ -2559,7 +2558,7 @@ ScriptAny GetStrippedText(
 
 // ~~
 
-ScriptAny GetLeftStrippedText(
+ScriptAny SystemGetLeftStrippedText(
     Environment environment,
     ScriptAny* self,
     ScriptAny[] argument_array,
@@ -2580,7 +2579,7 @@ ScriptAny GetLeftStrippedText(
 
 // ~~
 
-ScriptAny GetRightStrippedText(
+ScriptAny SystemGetRightStrippedText(
     Environment environment,
     ScriptAny* self,
     ScriptAny[] argument_array,
@@ -2879,9 +2878,9 @@ Interpreter CreateInterpreter(
     system_script_object[ "ReplacePrefix" ] = new ScriptFunction( "system.ReplacePrefix", &SystemReplacePrefix );
     system_script_object[ "ReplaceSuffix" ] = new ScriptFunction( "system.ReplaceSuffix", &SystemReplaceSuffix );
     system_script_object[ "ReplaceText" ] = new ScriptFunction( "system.ReplaceText", &SystemReplaceText );
-    system_script_object[ "GetStrippedText" ] = new ScriptFunction( "system.GetStrippedText", &SystemGetMinorCaseText );
-    system_script_object[ "GetLeftStrippedText" ] = new ScriptFunction( "system.GetLeftStrippedText", &SystemGetMajorCaseText );
-    system_script_object[ "GetRightStrippedText" ] = new ScriptFunction( "system.GetRightStrippedText", &SystemGetLowerCaseText );
+    system_script_object[ "GetStrippedText" ] = new ScriptFunction( "system.GetStrippedText", &SystemGetStrippedText );
+    system_script_object[ "GetLeftStrippedText" ] = new ScriptFunction( "system.GetLeftStrippedText", &SystemGetLeftStrippedText );
+    system_script_object[ "GetRightStrippedText" ] = new ScriptFunction( "system.GetRightStrippedText", &SystemGetRightStrippedText );
     system_script_object[ "GetMinorCaseText" ] = new ScriptFunction( "system.GetMinorCaseText", &SystemGetMinorCaseText );
     system_script_object[ "GetMajorCaseText" ] = new ScriptFunction( "system.GetMajorCaseText", &SystemGetMajorCaseText );
     system_script_object[ "GetLowerCaseText" ] = new ScriptFunction( "system.GetLowerCaseText", &SystemGetLowerCaseText );
