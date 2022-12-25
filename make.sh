@@ -1,3 +1,4 @@
 #!/bin/sh
 set -x
-dub build
+dub build --force --build=plain
+rm -r .dub

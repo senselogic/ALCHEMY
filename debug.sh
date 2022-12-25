@@ -1,3 +1,3 @@
 #!/bin/sh
 set -x
-dub build --build=debug
+dub build --force --build=debug
