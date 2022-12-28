@@ -8,19 +8,15 @@ for ( let table_index = 0;
 
     if ( table.Name == "CHARACTER" )
     {
+        file_text +=
+            "CHARACTER\n\n    Id Slug FirstName LastName Description Race Comment\n";
+
         for ( let row_index = 0;
               row_index < table.RowCount;
               ++row_index )
         {
             let row = table.RowArray[ row_index ];
             let next_row = table.GetRow( row_index + 1 );
-
-            if ( row_index == 0 )
-            {
-                file_text +=
-                    "CHARACTER\n\n    Id Slug FirstName LastName Description Race Comment\n";
-            }
-
             let slug = GetSlugCaseText( row.GetValue( "FirstName" ) + "-" + row.GetValue( "LastName" ) + "-character" );
 
             file_text +=

@@ -2182,7 +2182,9 @@ string GetCsvText(
     )
 {
     if ( text.indexOf( '"' ) >= 0
-         || text.indexOf( ',' ) >= 0 )
+         || text.indexOf( ',' ) >= 0
+         || text.indexOf( '\r' ) >= 0
+         || text.indexOf( '\n' ) >= 0 )
     {
         return "\"" ~ text.replace( "\"", "\"\"" ) ~ "\"";
     }
