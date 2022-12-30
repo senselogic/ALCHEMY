@@ -4,13 +4,13 @@ rm -r .dub
 rm docs.json
 rm __dummy.html
 rm -r docs/
-rm switch
-rm switch.so
-rm switch.dylib
-rm switch.dll
-rm switch.a
-rm switch.lib
-rm switch-test-*
+rm alchemy
+rm alchemy.so
+rm alchemy.dylib
+rm alchemy.dll
+rm alchemy.a
+rm alchemy.lib
+rm alchemy-test-*
 rm *.exe
 rm *.pdb
 rm *.o

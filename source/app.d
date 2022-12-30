@@ -1,21 +1,21 @@
 /*
-    This file is part of the Switch distribution.
+    This file is part of the Alchemy distribution.
 
-    https://github.com/senselogic/SWITCH
+    https://github.com/senselogic/ALCHEMY
 
     Copyright (C) 2017 Eric Pelzer (ecstatic.coder@gmail.com)
 
-    Switch is free software: you can redistribute it and/or modify
+    Alchemy is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, version 3.
 
-    Switch is distributed in the hope that it will be useful,
+    Alchemy is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Switch.  If not, see <http://www.gnu.org/licenses/>.
+    along with Alchemy.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 // -- IMPORTS
@@ -2977,7 +2977,7 @@ void main(
     if ( argument_array.length > 0 )
     {
         writeln( "Usage :" );
-        writeln( "    switch [options]" );
+        writeln( "    alchemy [options]" );
         writeln( "Options :" );
         writeln( "    --read-sql <data file path>" );
         writeln( "    --read-csv <data file path> <table name>" );
@@ -2985,10 +2985,10 @@ void main(
         writeln( "    --write-js <script file path>" );
         writeln( "    --run-js <script file path>" );
         writeln( "Examples :" );
-        writeln( "    switch --read-sql blog.sql --write-bd blog.bd" );
-        writeln( "    switch --read-sql blog.sql --write-csv blog.csv" );
-        writeln( "    switch --read-csv character.csv --write-bd character.bd" );
-        writeln( "    switch --read-csv character.csv --run-js character.js" );
+        writeln( "    alchemy --read-sql blog.sql --write-bd blog.bd" );
+        writeln( "    alchemy --read-sql blog.sql --write-csv blog.csv" );
+        writeln( "    alchemy --read-csv character.csv --write-bd character.bd" );
+        writeln( "    alchemy --read-csv character.csv --run-js character.js" );
 
         Abort( "Invalid arguments : " ~ argument_array.to!string() );
     }
