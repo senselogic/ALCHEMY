@@ -19,7 +19,7 @@ Database converter.
 
 ### Sample
 
-Data processing scripts can be defined using a JavaScript-like syntax.
+Data processing scripts can be defined in a JavaScript-like language.
 
 ```javascript
 let file_text = "";
