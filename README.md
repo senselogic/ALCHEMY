@@ -19,7 +19,7 @@ Database converter.
 
 ### Sample
 
-Data processing scripts can be defined in a simplified JavaScript-like language.
+Data processing scripts can be defined in a JavaScript-subset language.
 
 ```javascript
 let file_text = "";
@@ -146,7 +146,7 @@ alchemy [options]
 --read-csv <data file path> <table name> : read a CSV data file
 --write-bd <data file path> : write a Basil data file
 --write-csv <data file path> <table name> : write a CSV data file
---write-js <script file path> : run a JS script
+--write-js <script file path> : write a JS script
 --run-js <script file path> : run a JS script
 ```
 
@@ -171,18 +171,14 @@ alchemy --read-csv character.csv --write-bd character.bd
 Reads a CSV data file and writes a Basil data file.
 
 ```bash
-alchemy --read-csv character.csv --write-txt character.txt character.st
+alchemy --read-csv character.csv --run-js character.js
 ```
 
-Reads a CSV data file and writes a text file.
-
-## Limitations
-
-*   Operators are applied without precedence.
+Reads a CSV data file and runs a JavaScript-subset file.
 
 ## Version
 
-0.1
+0.5
 
 ## Author
 
