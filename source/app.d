@@ -2859,44 +2859,39 @@ ScriptAny SystemWriteText(
 Interpreter CreateInterpreter(
     )
 {
-    ScriptObject
-        system_script_object;
     Interpreter
         interpreter;
 
     interpreter = new Interpreter();
 
-    system_script_object = new ScriptObject( "system", null );
-    system_script_object[ "PrintLine" ] = new ScriptFunction( "system.PrintLine", &SystemPrintLine );
-    system_script_object[ "GetInteger" ] = new ScriptFunction( "system.GetInteger", &SystemGetInteger );
-    system_script_object[ "GetReal" ] = new ScriptFunction( "system.GetReal", &SystemGetReal );
-    system_script_object[ "ContainsText" ] = new ScriptFunction( "system.ContainsText", &SystemContainsText );
-    system_script_object[ "HasPrefix" ] = new ScriptFunction( "system.HasPrefix", &SystemHasPrefix );
-    system_script_object[ "HasSuffix" ] = new ScriptFunction( "system.HasSuffix", &SystemHasSuffix );
-    system_script_object[ "GetPrefix" ] = new ScriptFunction( "system.GetPrefix", &SystemGetPrefix );
-    system_script_object[ "GetSuffix" ] = new ScriptFunction( "system.GetSuffix", &SystemGetSuffix );
-    system_script_object[ "RemovePrefix" ] = new ScriptFunction( "system.RemovePrefix", &SystemRemovePrefix );
-    system_script_object[ "RemoveSuffix" ] = new ScriptFunction( "system.RemoveSuffix", &SystemRemoveSuffix );
-    system_script_object[ "ReplacePrefix" ] = new ScriptFunction( "system.ReplacePrefix", &SystemReplacePrefix );
-    system_script_object[ "ReplaceSuffix" ] = new ScriptFunction( "system.ReplaceSuffix", &SystemReplaceSuffix );
-    system_script_object[ "ReplaceText" ] = new ScriptFunction( "system.ReplaceText", &SystemReplaceText );
-    system_script_object[ "GetStrippedText" ] = new ScriptFunction( "system.GetStrippedText", &SystemGetStrippedText );
-    system_script_object[ "GetLeftStrippedText" ] = new ScriptFunction( "system.GetLeftStrippedText", &SystemGetLeftStrippedText );
-    system_script_object[ "GetRightStrippedText" ] = new ScriptFunction( "system.GetRightStrippedText", &SystemGetRightStrippedText );
-    system_script_object[ "GetMinorCaseText" ] = new ScriptFunction( "system.GetMinorCaseText", &SystemGetMinorCaseText );
-    system_script_object[ "GetMajorCaseText" ] = new ScriptFunction( "system.GetMajorCaseText", &SystemGetMajorCaseText );
-    system_script_object[ "GetLowerCaseText" ] = new ScriptFunction( "system.GetLowerCaseText", &SystemGetLowerCaseText );
-    system_script_object[ "GetUpperCaseText" ] = new ScriptFunction( "system.GetUpperCaseText", &SystemGetUpperCaseText );
-    system_script_object[ "GetPascalCaseText" ] = new ScriptFunction( "system.GetPascalCaseText", &SystemGetPascalCaseText );
-    system_script_object[ "GetCamelCaseText" ] = new ScriptFunction( "system.GetCamelCaseText", &SystemGetCamelCaseText );
-    system_script_object[ "GetSnakeCaseText" ] = new ScriptFunction( "system.GetSnakeCaseText", &SystemGetSnakeCaseText );
-    system_script_object[ "GetSlugCaseText" ] = new ScriptFunction( "system.GetSlugCaseText", &SystemGetSlugCaseText );
-    system_script_object[ "GetBasilText" ] = new ScriptFunction( "system.GetBasilText", &SystemGetBasilText );
-    system_script_object[ "GetCsvText" ] = new ScriptFunction( "system.GetCsvText", &SystemGetCsvText );
-    system_script_object[ "ReadText" ] = new ScriptFunction( "system.ReadText", &SystemReadText );
-    system_script_object[ "WriteText" ] = new ScriptFunction( "system.WriteText", &SystemWriteText );
-
-    interpreter.forceSetGlobal( "system", ScriptAny( system_script_object ), false );
+    interpreter.forceSetGlobal( "PrintLine", new ScriptFunction( "PrintLine", &SystemPrintLine ), false );
+    interpreter.forceSetGlobal( "GetInteger", new ScriptFunction( "GetInteger", &SystemGetInteger ), false );
+    interpreter.forceSetGlobal( "GetReal", new ScriptFunction( "GetReal", &SystemGetReal ), false );
+    interpreter.forceSetGlobal( "ContainsText", new ScriptFunction( "ContainsText", &SystemContainsText ), false );
+    interpreter.forceSetGlobal( "HasPrefix", new ScriptFunction( "HasPrefix", &SystemHasPrefix ), false );
+    interpreter.forceSetGlobal( "HasSuffix", new ScriptFunction( "HasSuffix", &SystemHasSuffix ), false );
+    interpreter.forceSetGlobal( "GetPrefix", new ScriptFunction( "GetPrefix", &SystemGetPrefix ), false );
+    interpreter.forceSetGlobal( "GetSuffix", new ScriptFunction( "GetSuffix", &SystemGetSuffix ), false );
+    interpreter.forceSetGlobal( "RemovePrefix", new ScriptFunction( "RemovePrefix", &SystemRemovePrefix ), false );
+    interpreter.forceSetGlobal( "RemoveSuffix", new ScriptFunction( "RemoveSuffix", &SystemRemoveSuffix ), false );
+    interpreter.forceSetGlobal( "ReplacePrefix", new ScriptFunction( "ReplacePrefix", &SystemReplacePrefix ), false );
+    interpreter.forceSetGlobal( "ReplaceSuffix", new ScriptFunction( "ReplaceSuffix", &SystemReplaceSuffix ), false );
+    interpreter.forceSetGlobal( "ReplaceText", new ScriptFunction( "ReplaceText", &SystemReplaceText ), false );
+    interpreter.forceSetGlobal( "GetStrippedText", new ScriptFunction( "GetStrippedText", &SystemGetStrippedText ), false );
+    interpreter.forceSetGlobal( "GetLeftStrippedText", new ScriptFunction( "GetLeftStrippedText", &SystemGetLeftStrippedText ), false );
+    interpreter.forceSetGlobal( "GetRightStrippedText", new ScriptFunction( "GetRightStrippedText", &SystemGetRightStrippedText ), false );
+    interpreter.forceSetGlobal( "GetMinorCaseText", new ScriptFunction( "GetMinorCaseText", &SystemGetMinorCaseText ), false );
+    interpreter.forceSetGlobal( "GetMajorCaseText", new ScriptFunction( "GetMajorCaseText", &SystemGetMajorCaseText ), false );
+    interpreter.forceSetGlobal( "GetLowerCaseText", new ScriptFunction( "GetLowerCaseText", &SystemGetLowerCaseText ), false );
+    interpreter.forceSetGlobal( "GetUpperCaseText", new ScriptFunction( "GetUpperCaseText", &SystemGetUpperCaseText ), false );
+    interpreter.forceSetGlobal( "GetPascalCaseText", new ScriptFunction( "GetPascalCaseText", &SystemGetPascalCaseText ), false );
+    interpreter.forceSetGlobal( "GetCamelCaseText", new ScriptFunction( "GetCamelCaseText", &SystemGetCamelCaseText ), false );
+    interpreter.forceSetGlobal( "GetSnakeCaseText", new ScriptFunction( "GetSnakeCaseText", &SystemGetSnakeCaseText ), false );
+    interpreter.forceSetGlobal( "GetSlugCaseText", new ScriptFunction( "GetSlugCaseText", &SystemGetSlugCaseText ), false );
+    interpreter.forceSetGlobal( "GetBasilText", new ScriptFunction( "GetBasilText", &SystemGetBasilText ), false );
+    interpreter.forceSetGlobal( "GetCsvText", new ScriptFunction( "GetCsvText", &SystemGetCsvText ), false );
+    interpreter.forceSetGlobal( "ReadText", new ScriptFunction( "ReadText", &SystemReadText ), false );
+    interpreter.forceSetGlobal( "WriteText", new ScriptFunction( "WriteText", &SystemWriteText ), false );
 
     return interpreter;
 }
