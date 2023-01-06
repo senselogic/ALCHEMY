@@ -2074,6 +2074,15 @@ string GetSnakeCaseText(
 
 // ~~
 
+string GetKebabCaseText(
+    string text
+    )
+{
+    return GetSnakeCaseText( text ).replace( '_', '-' );
+}
+
+// ~~
+
 dchar GetSlugCharacter(
     dchar character
     )
@@ -2157,6 +2166,15 @@ string GetSlugCaseText(
     }
 
     return slug_case_text.to!string();
+}
+
+// ~~
+
+string GetFileCaseText(
+    string text
+    )
+{
+    return GetSlugCaseText( text ).replace( '-', '_' );
 }
 
 // ~~
@@ -2749,6 +2767,27 @@ ScriptAny SystemGetSnakeCaseText(
 
 // ~~
 
+ScriptAny SystemGetKebabCaseText(
+    Environment environment,
+    ScriptAny* self,
+    ScriptAny[] argument_array,
+    ref NativeFunctionError native_function_error
+    )
+{
+    if ( argument_array.length != 1 )
+    {
+        native_function_error = NativeFunctionError.WRONG_NUMBER_OF_ARGS;
+
+        return ScriptAny.UNDEFINED;
+    }
+    else
+    {
+        return ScriptAny( GetKebabCaseText( argument_array[ 0 ].toString() ) );
+    }
+}
+
+// ~~
+
 ScriptAny SystemGetSlugCaseText(
     Environment environment,
     ScriptAny* self,
@@ -2765,6 +2804,27 @@ ScriptAny SystemGetSlugCaseText(
     else
     {
         return ScriptAny( GetSlugCaseText( argument_array[ 0 ].toString() ) );
+    }
+}
+
+// ~~
+
+ScriptAny SystemGetFileCaseText(
+    Environment environment,
+    ScriptAny* self,
+    ScriptAny[] argument_array,
+    ref NativeFunctionError native_function_error
+    )
+{
+    if ( argument_array.length != 1 )
+    {
+        native_function_error = NativeFunctionError.WRONG_NUMBER_OF_ARGS;
+
+        return ScriptAny.UNDEFINED;
+    }
+    else
+    {
+        return ScriptAny( GetFileCaseText( argument_array[ 0 ].toString() ) );
     }
 }
 
@@ -2887,7 +2947,9 @@ Interpreter CreateInterpreter(
     interpreter.forceSetGlobal( "GetPascalCaseText", new ScriptFunction( "GetPascalCaseText", &SystemGetPascalCaseText ), false );
     interpreter.forceSetGlobal( "GetCamelCaseText", new ScriptFunction( "GetCamelCaseText", &SystemGetCamelCaseText ), false );
     interpreter.forceSetGlobal( "GetSnakeCaseText", new ScriptFunction( "GetSnakeCaseText", &SystemGetSnakeCaseText ), false );
+    interpreter.forceSetGlobal( "GetKebabCaseText", new ScriptFunction( "GetKebabCaseText", &SystemGetKebabCaseText ), false );
     interpreter.forceSetGlobal( "GetSlugCaseText", new ScriptFunction( "GetSlugCaseText", &SystemGetSlugCaseText ), false );
+    interpreter.forceSetGlobal( "GetFileCaseText", new ScriptFunction( "GetFileCaseText", &SystemGetFileCaseText ), false );
     interpreter.forceSetGlobal( "GetBasilText", new ScriptFunction( "GetBasilText", &SystemGetBasilText ), false );
     interpreter.forceSetGlobal( "GetCsvText", new ScriptFunction( "GetCsvText", &SystemGetCsvText ), false );
     interpreter.forceSetGlobal( "ReadText", new ScriptFunction( "ReadText", &SystemReadText ), false );
