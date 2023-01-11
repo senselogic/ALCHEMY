@@ -1,12 +1,18 @@
 {
-    "authors": [
-        "SenseLogic"
-    ],
-    "copyright": "Copyright © 2022, SenseLogic",
+    "name": "alchemy",
+    "description": "Database converter.",
+    "license": "GPL-3.0",
+    "authors": [ "Eric Pelzer" ],
+    "copyright": "Copyright © 2022, Eric Pelzer",
     "dependencies": {
-        "dmildew": "~>0.5.12"
+        "dmildew": "~>0.5.12",
+        "seed": "~>1.0.0"
     },
-    "description": "Database converter",
-    "license": "GPLv3",
-    "name": "alchemy"
+    "buildTypes": {
+        "windows": {
+            "lflags": [ "/Brepro" ]
+        },
+        "linux": {
+        }
+    }
 }
